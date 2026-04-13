@@ -521,11 +521,11 @@
               item.addEventListener('click', function () {
                 var nome = item.querySelector('.servico-nome').textContent.trim();
                 var agCard = document.querySelector('.ag-servico-card[data-servico="' + nome + '"]');
-                if (agCard) {
+                if (agCard && !agCard.classList.contains('ag-selected')) {
                   agCard.click();
-                  item.classList.toggle('selecionado', agCard.classList.contains('ag-selected'));
                 }
-                document.getElementById('agendar').scrollIntoView({ behavior: 'smooth' });
+                item.classList.toggle('selecionado', agCard && agCard.classList.contains('ag-selected'));
+                showStep(1);
               });
             });
           }
