@@ -1,0 +1,1300 @@
+<!-- SEÇÃO DE AGENDAMENTO INTERATIVO -->
+<section class="agendamento" id="agendar">
+
+  <!-- Barra de progresso -->
+  <div class="ag-progress-bar">
+    <div class="ag-step" data-step="1">
+      <div class="ag-step-num">1</div>
+      <div class="ag-step-label">Servi&#231;o</div>
+    </div>
+    <div class="ag-step-line"></div>
+    <div class="ag-step" data-step="2">
+      <div class="ag-step-num">2</div>
+      <div class="ag-step-label">Data e hora</div>
+    </div>
+    <div class="ag-step-line"></div>
+    <div class="ag-step" data-step="3">
+      <div class="ag-step-num">3</div>
+      <div class="ag-step-label">Seus dados</div>
+    </div>
+    <div class="ag-step-line"></div>
+    <div class="ag-step" data-step="4">
+      <div class="ag-step-num">4</div>
+      <div class="ag-step-label">Confirma&#231;&#227;o</div>
+    </div>
+  </div>
+
+  <!-- CONTAINER PRINCIPAL -->
+  <div class="ag-container">
+
+    <!-- ========== PASSO 1: ESCOLHA DO SERVICO ========== -->
+    <div class="ag-panel" id="ag-step-1">
+      <div class="ag-header">
+        <div class="ag-section-label">Agende online</div>
+        <h2 class="ag-title">Escolha o <em>servi&#231;o</em></h2>
+      </div>
+      <div class="ag-servicos-grid">
+        <div class="ag-servico-card" data-servico="Corte com Leonardo" data-preco="150" data-duracao="1h">
+          <div class="ag-servico-top">
+            <div class="ag-servico-num">01</div>
+            <div class="ag-servico-badge" style="display:none;">Mais procurado</div>
+          </div>
+          <div class="ag-servico-nome">Corte com Leonardo</div>
+          <div class="ag-servico-desc">Corte personalizado com an&#225;lise de visagismo e estilo individual.</div>
+          <div class="ag-servico-footer">
+            <div class="ag-servico-preco">R$ 150</div>
+            <div class="ag-servico-duracao">1h</div>
+          </div>
+          <div class="ag-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" stroke="currentColor" stroke-width="2" fill="none"/></svg></div>
+        </div>
+
+        <div class="ag-servico-card" data-servico="Desondula&#231;&#227;o" data-preco="150" data-duracao="1h 30min">
+          <div class="ag-servico-top">
+            <div class="ag-servico-num">02</div>
+            <div class="ag-servico-badge" style="display:none;">Mais procurado</div>
+          </div>
+          <div class="ag-servico-nome">Desondula&#231;&#227;o</div>
+          <div class="ag-servico-desc">Tratamento profissional para alisar e disciplinar os fios com durabilidade.</div>
+          <div class="ag-servico-footer">
+            <div class="ag-servico-preco">R$ 150</div>
+            <div class="ag-servico-duracao">1h 30min</div>
+          </div>
+          <div class="ag-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" stroke="currentColor" stroke-width="2" fill="none"/></svg></div>
+        </div>
+
+        <div class="ag-servico-card ag-card-destaque" data-servico="Corte com Visagismo" data-preco="220" data-duracao="1h">
+          <div class="ag-servico-top">
+            <div class="ag-servico-num">03</div>
+            <div class="ag-servico-badge">Mais procurado</div>
+          </div>
+          <div class="ag-servico-nome">Corte com Visagismo</div>
+          <div class="ag-servico-desc">Atendimento completo com consultoria de imagem, an&#225;lise facial e corte sob medida.</div>
+          <div class="ag-servico-footer">
+            <div class="ag-servico-preco">R$ 220</div>
+            <div class="ag-servico-duracao">1h</div>
+          </div>
+          <div class="ag-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" stroke="currentColor" stroke-width="2" fill="none"/></svg></div>
+        </div>
+
+        <div class="ag-servico-card" data-servico="Aparar Barba" data-preco="75" data-duracao="20min">
+          <div class="ag-servico-top">
+            <div class="ag-servico-num">04</div>
+            <div class="ag-servico-badge" style="display:none;">Mais procurado</div>
+          </div>
+          <div class="ag-servico-nome">Aparar Barba</div>
+          <div class="ag-servico-desc">Modelagem e aparo preciso para uma barba impec&#225;vel.</div>
+          <div class="ag-servico-footer">
+            <div class="ag-servico-preco">R$ 75</div>
+            <div class="ag-servico-duracao">20min</div>
+          </div>
+          <div class="ag-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" stroke="currentColor" stroke-width="2" fill="none"/></svg></div>
+        </div>
+      </div>
+      <div class="ag-actions">
+        <button class="ag-btn-primary" id="ag-s1-next" disabled>Continuar <span>&#8594;</span></button>
+      </div>
+    </div>
+
+    <!-- ========== PASSO 2: DATA E HORA ========== -->
+    <div class="ag-panel" id="ag-step-2" style="display:none;">
+      <div class="ag-header">
+        <div class="ag-section-label">Agende online</div>
+        <h2 class="ag-title">Escolha <em>data e hora</em></h2>
+      </div>
+      <div class="ag-datahora-layout">
+
+        <!-- Calendario -->
+        <div class="ag-calendar">
+          <div class="ag-cal-header">
+            <button class="ag-cal-nav" id="ag-cal-prev" aria-label="M&#234;s anterior">
+              <svg viewBox="0 0 24 24" width="18" height="18"><polyline points="15 18 9 12 15 6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+            </button>
+            <div class="ag-cal-mes" id="ag-cal-mes"></div>
+            <button class="ag-cal-nav" id="ag-cal-next" aria-label="Pr&#243;ximo m&#234;s">
+              <svg viewBox="0 0 24 24" width="18" height="18"><polyline points="9 18 15 12 9 6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+            </button>
+          </div>
+          <div class="ag-cal-dias-header">
+            <span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>S&#225;b</span>
+          </div>
+          <div class="ag-cal-grid" id="ag-cal-grid"></div>
+        </div>
+
+        <!-- Horarios -->
+        <div class="ag-horarios">
+          <div class="ag-horarios-tabs">
+            <button class="ag-tab active" data-periodo="manha" id="ag-tab-manha">Manh&#227;</button>
+            <button class="ag-tab" data-periodo="tarde" id="ag-tab-tarde">Tarde</button>
+          </div>
+          <div class="ag-horarios-grid" id="ag-horarios-manha">
+            <div class="ag-hora" data-hora="8:00">8:00</div>
+            <div class="ag-hora" data-hora="8:30">8:30</div>
+            <div class="ag-hora" data-hora="9:00">9:00</div>
+            <div class="ag-hora" data-hora="9:15">9:15</div>
+            <div class="ag-hora" data-hora="9:30">9:30</div>
+            <div class="ag-hora" data-hora="9:45">9:45</div>
+            <div class="ag-hora" data-hora="10:00">10:00</div>
+            <div class="ag-hora" data-hora="10:15">10:15</div>
+            <div class="ag-hora" data-hora="10:30">10:30</div>
+            <div class="ag-hora" data-hora="10:45">10:45</div>
+            <div class="ag-hora" data-hora="11:00">11:00</div>
+            <div class="ag-hora" data-hora="11:30">11:30</div>
+          </div>
+          <div class="ag-horarios-grid" id="ag-horarios-tarde" style="display:none;">
+            <div class="ag-hora" data-hora="12:00">12:00</div>
+            <div class="ag-hora" data-hora="12:30">12:30</div>
+            <div class="ag-hora" data-hora="13:00">13:00</div>
+            <div class="ag-hora" data-hora="13:30">13:30</div>
+            <div class="ag-hora" data-hora="14:00">14:00</div>
+            <div class="ag-hora" data-hora="14:15">14:15</div>
+            <div class="ag-hora" data-hora="14:30">14:30</div>
+            <div class="ag-hora" data-hora="14:45">14:45</div>
+            <div class="ag-hora" data-hora="15:00">15:00</div>
+            <div class="ag-hora" data-hora="15:15">15:15</div>
+            <div class="ag-hora" data-hora="15:30">15:30</div>
+            <div class="ag-hora" data-hora="15:45">15:45</div>
+            <div class="ag-hora" data-hora="16:00">16:00</div>
+            <div class="ag-hora" data-hora="16:15">16:15</div>
+            <div class="ag-hora" data-hora="16:30">16:30</div>
+            <div class="ag-hora" data-hora="16:45">16:45</div>
+            <div class="ag-hora" data-hora="17:00">17:00</div>
+          </div>
+        </div>
+      </div>
+      <div class="ag-actions">
+        <button class="ag-btn-ghost" id="ag-s2-back"><span>&#8592;</span> Voltar</button>
+        <button class="ag-btn-primary" id="ag-s2-next" disabled>Continuar <span>&#8594;</span></button>
+      </div>
+    </div>
+
+    <!-- ========== PASSO 3: DADOS DO CLIENTE ========== -->
+    <div class="ag-panel" id="ag-step-3" style="display:none;">
+      <div class="ag-header">
+        <div class="ag-section-label">Agende online</div>
+        <h2 class="ag-title">Seus <em>dados</em></h2>
+      </div>
+      <div class="ag-step3-layout">
+        <div class="ag-resumo" id="ag-resumo-card">
+          <div class="ag-resumo-titulo">Resumo do agendamento</div>
+          <div class="ag-resumo-linha">
+            <span class="ag-resumo-label">Servi&#231;o</span>
+            <span class="ag-resumo-val" id="ag-resumo-servico">&#8212;</span>
+          </div>
+          <div class="ag-resumo-linha">
+            <span class="ag-resumo-label">Data</span>
+            <span class="ag-resumo-val" id="ag-resumo-data">&#8212;</span>
+          </div>
+          <div class="ag-resumo-linha">
+            <span class="ag-resumo-label">Hor&#225;rio</span>
+            <span class="ag-resumo-val" id="ag-resumo-hora">&#8212;</span>
+          </div>
+          <div class="ag-resumo-linha">
+            <span class="ag-resumo-label">Total</span>
+            <span class="ag-resumo-val ag-resumo-total" id="ag-resumo-total">&#8212;</span>
+          </div>
+        </div>
+
+        <div class="ag-form">
+          <div class="ag-form-group">
+            <label class="ag-form-label" for="ag-nome">Nome completo</label>
+            <input class="ag-form-input" id="ag-nome" type="text" placeholder="Seu nome completo" autocomplete="name" />
+            <span class="ag-form-error"></span>
+          </div>
+          <div class="ag-form-group">
+            <label class="ag-form-label" for="ag-whatsapp">WhatsApp</label>
+            <input class="ag-form-input" id="ag-whatsapp" type="tel" placeholder="(99) 99999-9999" autocomplete="tel" />
+            <span class="ag-form-error"></span>
+          </div>
+          <div class="ag-form-group">
+            <label class="ag-form-label" for="ag-obs">Observa&#231;&#245;es <span style="color:#555;font-size:9px;letter-spacing:1px;">(opcional)</span></label>
+            <textarea class="ag-form-textarea" id="ag-obs" rows="3" placeholder="Alguma prefer&#234;ncia ou observa&#231;&#227;o..."></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="ag-actions">
+        <button class="ag-btn-ghost" id="ag-s3-back"><span>&#8592;</span> Voltar</button>
+        <button class="ag-btn-primary" id="ag-s3-next">Confirmar agendamento <span>&#8594;</span></button>
+      </div>
+    </div>
+
+    <!-- ========== PASSO 4: CONFIRMACAO ========== -->
+    <div class="ag-panel" id="ag-step-4" style="display:none;">
+      <div class="ag-confirmacao">
+        <div class="ag-check-circle">
+          <svg viewBox="0 0 24 24" width="36" height="36"><polyline points="20 6 9 17 4 12" stroke="#080808" stroke-width="2.5" fill="none"/></svg>
+        </div>
+        <h2 class="ag-confirm-titulo">Agendamento <em>confirmado!</em></h2>
+        <p class="ag-confirm-msg">Sua solicita&#231;&#227;o foi enviada via WhatsApp. Entraremos em contato em breve para confirmar os detalhes.</p>
+        <div class="ag-confirm-card">
+          <div class="ag-resumo-titulo">Detalhes</div>
+          <div class="ag-resumo-linha">
+            <span class="ag-resumo-label">Servi&#231;o</span>
+            <span class="ag-resumo-val" id="ag-conf-servico">&#8212;</span>
+          </div>
+          <div class="ag-resumo-linha">
+            <span class="ag-resumo-label">Data</span>
+            <span class="ag-resumo-val" id="ag-conf-data">&#8212;</span>
+          </div>
+          <div class="ag-resumo-linha">
+            <span class="ag-resumo-label">Hor&#225;rio</span>
+            <span class="ag-resumo-val" id="ag-conf-hora">&#8212;</span>
+          </div>
+          <div class="ag-resumo-linha">
+            <span class="ag-resumo-label">Cliente</span>
+            <span class="ag-resumo-val" id="ag-conf-nome">&#8212;</span>
+          </div>
+          <div class="ag-resumo-linha">
+            <span class="ag-resumo-label">Total</span>
+            <span class="ag-resumo-val ag-resumo-total" id="ag-conf-total">&#8212;</span>
+          </div>
+        </div>
+        <button class="ag-btn-ghost" id="ag-new-booking">Fazer novo agendamento</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* ==========================================
+   AGENDAMENTO INTERATIVO - ESTILOS
+   ========================================== */
+
+.ag-section-label {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #c9a84c;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ag-section-label::after {
+  content: '';
+  flex: 1;
+  height: 0.5px;
+  background: #9a7a2e;
+  opacity: 0.4;
+  max-width: 40px;
+}
+
+.ag-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 300;
+  line-height: 1.15;
+  margin-bottom: 40px;
+  color: #f5f0e8;
+}
+
+.ag-title em {
+  font-style: italic;
+  color: #c9a84c;
+}
+
+/* Barra de progresso */
+.ag-progress-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 60px 48px;
+  gap: 0;
+}
+
+.ag-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.3;
+  transition: opacity 0.3s;
+}
+
+.ag-step.ag-active {
+  opacity: 1;
+}
+
+.ag-step.ag-done {
+  opacity: 0.5;
+}
+
+.ag-step-num {
+  width: 28px;
+  height: 28px;
+  border: 0.5px solid #9a7a2e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: #c9a84c;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.ag-step.ag-active .ag-step-num {
+  background: #c9a84c;
+  color: #080808;
+  border-color: #c9a84c;
+}
+
+.ag-step.ag-done .ag-step-num {
+  background: #9a7a2e;
+  color: #080808;
+  border-color: #9a7a2e;
+}
+
+.ag-step-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+
+.ag-step.ag-active .ag-step-label {
+  color: #c9a84c;
+}
+
+.ag-step.ag-done .ag-step-label {
+  color: #555;
+}
+
+.ag-step-line {
+  flex: 1;
+  max-width: 80px;
+  height: 0.5px;
+  background: #1f1f1f;
+  margin: 0 12px;
+}
+
+/* Container */
+.ag-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 60px 120px;
+}
+
+.ag-header {
+  margin-bottom: 40px;
+}
+
+/* PASSO 1: Cards de servico */
+.ag-servicos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.ag-servico-card {
+  background: #111111;
+  border: 0.5px solid #1f1f1f;
+  padding: 28px;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s;
+  position: relative;
+}
+
+.ag-servico-card:hover {
+  border-color: #9a7a2e;
+}
+
+.ag-servico-card.ag-selected {
+  border-color: #c9a84c;
+  transform: translateY(-2px);
+}
+
+.ag-servico-card.ag-card-destaque {
+  border-color: rgba(201, 168, 76, 0.3);
+}
+
+.ag-servico-card.ag-card-destaque.ag-selected {
+  border-color: #c9a84c;
+}
+
+.ag-servico-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.ag-servico-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  color: #333;
+  letter-spacing: 2px;
+}
+
+.ag-servico-badge {
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #080808;
+  background: #c9a84c;
+  padding: 3px 8px;
+}
+
+.ag-servico-nome {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #f5f0e8;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.ag-servico-card.ag-selected .ag-servico-nome {
+  color: #e2c97e;
+}
+
+.ag-servico-desc {
+  font-size: 12px;
+  color: #888;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.ag-servico-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ag-servico-preco {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  color: #c9a84c;
+}
+
+.ag-servico-duracao {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.ag-check {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  border: 0.5px solid #1f1f1f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c9a84c;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.2s;
+}
+
+.ag-servico-card.ag-selected .ag-check {
+  opacity: 1;
+  transform: scale(1);
+  background: #c9a84c;
+  color: #080808;
+  border-color: #c9a84c;
+}
+
+/* PASSO 2: Calendario e horarios */
+.ag-datahora-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.ag-calendar {
+  background: #111111;
+  border: 0.5px solid #1f1f1f;
+  padding: 24px;
+}
+
+.ag-cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.ag-cal-mes {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #f5f0e8;
+  letter-spacing: 1px;
+}
+
+.ag-cal-nav {
+  background: none;
+  border: 0.5px solid #1f1f1f;
+  color: #888;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ag-cal-nav:hover {
+  border-color: #c9a84c;
+  color: #c9a84c;
+}
+
+.ag-cal-dias-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.ag-cal-dias-header span {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #555;
+  padding: 8px 0;
+}
+
+.ag-cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.ag-cal-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #f5f0e8;
+  cursor: pointer;
+  transition: all 0.15s;
+  position: relative;
+}
+
+.ag-cal-day:hover:not(.ag-day-disabled):not(.ag-day-empty) {
+  background: rgba(201, 168, 76, 0.1);
+  color: #c9a84c;
+}
+
+.ag-cal-day.ag-day-empty {
+  cursor: default;
+}
+
+.ag-cal-day.ag-day-disabled {
+  color: #333;
+  cursor: not-allowed;
+}
+
+.ag-cal-day.ag-day-today {
+  color: #888;
+}
+
+.ag-cal-day.ag-day-today::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #888;
+}
+
+.ag-cal-day.ag-day-selected {
+  background: #c9a84c !important;
+  color: #080808 !important;
+}
+
+.ag-cal-day.ag-day-selected::after {
+  background: #080808 !important;
+}
+
+/* Abas de periodo */
+.ag-horarios {
+  background: #111111;
+  border: 0.5px solid #1f1f1f;
+  padding: 24px;
+}
+
+.ag-horarios-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 0.5px solid #1f1f1f;
+  margin-bottom: 20px;
+}
+
+.ag-tab {
+  background: none;
+  border: none;
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #555;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: color 0.2s;
+  border-bottom: 1px solid transparent;
+  margin-bottom: -0.5px;
+}
+
+.ag-tab:hover {
+  color: #888;
+}
+
+.ag-tab.ag-tab-active {
+  color: #c9a84c;
+  border-bottom-color: #c9a84c;
+}
+
+.ag-horarios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.ag-hora {
+  padding: 10px 4px;
+  text-align: center;
+  font-size: 13px;
+  color: #f5f0e8;
+  border: 0.5px solid #1f1f1f;
+  cursor: pointer;
+  transition: all 0.15s;
+  letter-spacing: 0.5px;
+}
+
+.ag-hora:hover:not(.ag-hora-unavail) {
+  border-color: #c9a84c;
+  color: #c9a84c;
+}
+
+.ag-hora.ag-hora-selected {
+  background: #c9a84c;
+  border-color: #c9a84c;
+  color: #080808;
+}
+
+.ag-hora.ag-hora-unavail {
+  color: #2a2a2a;
+  border-color: #1a1a1a;
+  cursor: not-allowed;
+}
+
+/* PASSO 3: Dados */
+.ag-step3-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.ag-resumo {
+  background: #111111;
+  border: 0.5px solid #1f1f1f;
+  padding: 28px;
+  align-self: start;
+}
+
+.ag-resumo-titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #f5f0e8;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.ag-resumo-linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 0.5px solid #1a1a1a;
+  gap: 12px;
+}
+
+.ag-resumo-linha:last-child {
+  border-bottom: none;
+}
+
+.ag-resumo-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #555;
+  flex-shrink: 0;
+}
+
+.ag-resumo-val {
+  font-size: 13px;
+  color: #f5f0e8;
+  text-align: right;
+}
+
+.ag-resumo-total {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: #c9a84c;
+}
+
+.ag-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ag-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ag-form-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.ag-form-input,
+.ag-form-textarea {
+  background: #1a1a1a;
+  border: 0.5px solid #2a2a2a;
+  color: #f5f0e8;
+  padding: 12px 16px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.ag-form-input:focus,
+.ag-form-textarea:focus {
+  border-color: #c9a84c;
+}
+
+.ag-form-input.ag-input-error {
+  border-color: #e05555;
+}
+
+.ag-form-input.ag-input-ok {
+  border-color: #c9a84c;
+}
+
+.ag-form-error {
+  font-size: 11px;
+  color: #e05555;
+  min-height: 14px;
+  letter-spacing: 0.5px;
+}
+
+.ag-form-textarea {
+  resize: none;
+}
+
+.ag-form-input::placeholder,
+.ag-form-textarea::placeholder {
+  color: #333;
+}
+
+/* PASSO 4: Confirmacao */
+.ag-confirmacao {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.ag-check-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #c9a84c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 32px;
+  animation: ag-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes ag-pop {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.ag-confirm-titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 300;
+  color: #f5f0e8;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.ag-confirm-titulo em {
+  font-style: italic;
+  color: #c9a84c;
+}
+
+.ag-confirm-msg {
+  font-size: 14px;
+  color: #888;
+  line-height: 1.8;
+  max-width: 480px;
+  margin: 0 auto 40px;
+}
+
+.ag-confirm-card {
+  background: #111111;
+  border: 0.5px solid #1f1f1f;
+  padding: 28px 32px;
+  max-width: 420px;
+  margin: 0 auto 40px;
+  text-align: left;
+}
+
+/* Botoes */
+.ag-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+}
+
+.ag-btn-primary {
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #080808;
+  background: #c9a84c;
+  border: none;
+  padding: 14px 32px;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ag-btn-primary:hover:not(:disabled) {
+  background: #e2c97e;
+}
+
+.ag-btn-primary:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.ag-btn-ghost {
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+  background: transparent;
+  border: none;
+  padding: 14px 8px;
+  cursor: pointer;
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ag-btn-ghost:hover {
+  color: #f5f0e8;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .ag-progress-bar {
+    padding: 0 24px 32px;
+    gap: 0;
+  }
+
+  .ag-step-label {
+    display: none;
+  }
+
+  .ag-step-line {
+    max-width: 40px;
+  }
+
+  .ag-container {
+    padding: 0 24px 80px;
+  }
+
+  .ag-servicos-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ag-datahora-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .ag-step3-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .ag-horarios-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ag-actions {
+    flex-direction: column-reverse;
+  }
+
+  .ag-btn-primary,
+  .ag-btn-ghost {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<script>
+(function() {
+  var currentStep = 1;
+  var state = {
+    servico: null,
+    preco: null,
+    duracao: null,
+    data: null,
+    hora: null,
+    nome: null,
+    whatsapp: null,
+    obs: null
+  };
+  var calDate = new Date();
+  var unavailableHours = [];
+  var activePeriodo = 'manha';
+
+  function init() {
+    initServicos();
+    initCalendario();
+    initHorarios();
+    initStep3();
+    initNavButtons();
+    updateProgressBar();
+  }
+
+  /* ---- Barra de progresso ---- */
+  function updateProgressBar() {
+    document.querySelectorAll('.ag-step').forEach(function(el) {
+      var s = +el.dataset.step;
+      el.classList.remove('ag-active', 'ag-done');
+      if (s === currentStep) {
+        el.classList.add('ag-active');
+      } else if (s < currentStep) {
+        el.classList.add('ag-done');
+      }
+    });
+  }
+
+  /* ---- Navegacao entre passos ---- */
+  function showStep(n) {
+    document.querySelectorAll('.ag-panel').forEach(function(p) { p.style.display = 'none'; });
+    var panel = document.getElementById('ag-step-' + n);
+    if (panel) panel.style.display = 'block';
+    currentStep = n;
+    updateProgressBar();
+    if (n === 3) updateStep3();
+    if (n === 4) updateStep4();
+    window.scrollTo({ top: document.getElementById('agendar').offsetTop - 80, behavior: 'smooth' });
+  }
+
+  function goNext() {
+    if (currentStep < 4) showStep(currentStep + 1);
+  }
+
+  function goBack() {
+    if (currentStep > 1) showStep(currentStep - 1);
+  }
+
+  function initNavButtons() {
+    document.getElementById('ag-s1-next').addEventListener('click', goNext);
+    document.getElementById('ag-s2-back').addEventListener('click', goBack);
+    document.getElementById('ag-s2-next').addEventListener('click', goNext);
+    document.getElementById('ag-s3-back').addEventListener('click', goBack);
+    document.getElementById('ag-s3-next').addEventListener('click', sendToWhatsApp);
+    document.getElementById('ag-new-booking').addEventListener('click', resetBooking);
+  }
+
+  /* ---- PASSO 1: Servicos ---- */
+  function initServicos() {
+    var cards = document.querySelectorAll('.ag-servico-card');
+    var nextBtn = document.getElementById('ag-s1-next');
+
+    cards.forEach(function(card) {
+      card.addEventListener('click', function() {
+        cards.forEach(function(c) { c.classList.remove('ag-selected'); });
+        card.classList.add('ag-selected');
+        state.servico = card.dataset.servico;
+        state.preco = card.dataset.preco;
+        state.duracao = card.dataset.duracao;
+        nextBtn.disabled = false;
+      });
+    });
+  }
+
+  /* ---- PASSO 2: Calendario ---- */
+  function initCalendario() {
+    renderCalendar();
+
+    document.getElementById('ag-cal-prev').addEventListener('click', function() {
+      calDate.setMonth(calDate.getMonth() - 1);
+      renderCalendar();
+    });
+
+    document.getElementById('ag-cal-next').addEventListener('click', function() {
+      calDate.setMonth(calDate.getMonth() + 1);
+      renderCalendar();
+    });
+  }
+
+  function renderCalendar() {
+    var year = calDate.getFullYear();
+    var month = calDate.getMonth();
+    var meses = ['Janeiro', 'Fevereiro', 'Mar&#231;o', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+
+    document.getElementById('ag-cal-mes').textContent = meses[month] + ' ' + year;
+
+    var grid = document.getElementById('ag-cal-grid');
+    grid.innerHTML = '';
+
+    var firstDay = new Date(year, month, 1).getDay();
+    var daysInMonth = new Date(year, month + 1, 0).getDate();
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    for (var i = 0; i < firstDay; i++) {
+      var empty = document.createElement('div');
+      empty.className = 'ag-cal-day ag-day-empty';
+      grid.appendChild(empty);
+    }
+
+    for (var d = 1; d <= daysInMonth; d++) {
+      var dayEl = document.createElement('div');
+      dayEl.className = 'ag-cal-day';
+      dayEl.textContent = d;
+
+      var dateObj = new Date(year, month, d);
+
+      if (dateObj < today) {
+        dayEl.classList.add('ag-day-disabled');
+      } else if (dateObj.getTime() === today.getTime()) {
+        dayEl.classList.add('ag-day-today');
+      }
+
+      if (dateObj.getDay() === 0) {
+        dayEl.classList.add('ag-day-disabled');
+      }
+
+      dayEl.addEventListener('click', function(currDay, currDate) {
+        return function() {
+          if (this.classList.contains('ag-day-disabled')) return;
+          document.querySelectorAll('.ag-cal-day').forEach(function(el) {
+            el.classList.remove('ag-day-selected');
+          });
+          this.classList.add('ag-day-selected');
+          state.data = currDate;
+          state.hora = null;
+          document.querySelectorAll('.ag-hora').forEach(function(el) {
+            el.classList.remove('ag-hora-selected');
+          });
+          refreshHorarios(currDate);
+          checkStep2Ready();
+        };
+      }(d, formatDateBR(dateObj)));
+
+      grid.appendChild(dayEl);
+    }
+  }
+
+  function formatDateBR(date) {
+    var d = date.getDate();
+    var mo = date.getMonth() + 1;
+    var y = date.getFullYear();
+    return (d < 10 ? '0' + d : d) + '/' + (mo < 10 ? '0' + mo : mo) + '/' + y;
+  }
+
+  /* ---- PASSO 2: Horarios ---- */
+  function initHorarios() {
+    var tabs = document.querySelectorAll('.ag-tab');
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        tabs.forEach(function(t) { t.classList.remove('ag-tab-active'); });
+        tab.classList.add('ag-tab-active');
+        var periodo = tab.dataset.periodo;
+        activePeriodo = periodo;
+        document.getElementById('ag-horarios-manha').style.display = periodo === 'manha' ? '' : 'none';
+        document.getElementById('ag-horarios-tarde').style.display = periodo === 'tarde' ? '' : 'none';
+      });
+    });
+
+    document.querySelectorAll('.ag-hora').forEach(function(hora) {
+      var h = hora.dataset.hora;
+      hora.addEventListener('click', function() {
+        if (this.classList.contains('ag-hora-unavail')) return;
+        document.querySelectorAll('.ag-hora').forEach(function(el) {
+          el.classList.remove('ag-hora-selected');
+        });
+        this.classList.add('ag-hora-selected');
+        state.hora = h;
+        checkStep2Ready();
+      });
+    });
+  }
+
+  function checkStep2Ready() {
+    var btn = document.getElementById('ag-s2-next');
+    btn.disabled = !(state.data && state.hora);
+  }
+
+  function getBookedHours(date) {
+    try {
+      var data = JSON.parse(localStorage.getItem('barbeariaAgendamentos') || '{}');
+      return data[date] || [];
+    } catch(e) { return []; }
+  }
+
+  function saveBooking(date, hour) {
+    try {
+      var data = JSON.parse(localStorage.getItem('barbeariaAgendamentos') || '{}');
+      if (!data[date]) data[date] = [];
+      if (data[date].indexOf(hour) === -1) data[date].push(hour);
+      localStorage.setItem('barbeariaAgendamentos', JSON.stringify(data));
+    } catch(e) {}
+  }
+
+  function refreshHorarios(date) {
+    var booked = getBookedHours(date);
+    document.querySelectorAll('.ag-hora').forEach(function(hora) {
+      hora.classList.remove('ag-hora-unavail');
+      if (booked.indexOf(hora.dataset.hora) !== -1) {
+        hora.classList.add('ag-hora-unavail');
+      }
+    });
+  }
+
+  /* ---- PASSO 3: Dados ---- */
+  function initStep3() {
+    var nome = document.getElementById('ag-nome');
+    var whatsapp = document.getElementById('ag-whatsapp');
+
+    nome.addEventListener('input', function() {
+      state.nome = nome.value.trim();
+      nome.classList.remove('ag-input-error');
+      if (state.nome) nome.classList.add('ag-input-ok');
+      else nome.classList.remove('ag-input-ok');
+    });
+
+    whatsapp.addEventListener('input', function() {
+      state.whatsapp = whatsapp.value.trim();
+      whatsapp.classList.remove('ag-input-error');
+      if (state.whatsapp) whatsapp.classList.add('ag-input-ok');
+      else whatsapp.classList.remove('ag-input-ok');
+    });
+
+    document.getElementById('ag-obs').addEventListener('input', function() {
+      state.obs = this.value.trim();
+    });
+  }
+
+  function updateStep3() {
+    document.getElementById('ag-resumo-servico').textContent = state.servico || '—';
+    document.getElementById('ag-resumo-data').textContent = state.data || '—';
+    document.getElementById('ag-resumo-hora').textContent = state.hora || '—';
+    document.getElementById('ag-resumo-total').textContent = state.preco ? 'R$ ' + state.preco : '—';
+  }
+
+  function validateStep3() {
+    var valid = true;
+    var nome = document.getElementById('ag-nome');
+    var whatsapp = document.getElementById('ag-whatsapp');
+
+    if (!state.nome) {
+      nome.classList.add('ag-input-error');
+      nome.nextElementSibling.textContent = 'Campo obrigat\xf3rio';
+      valid = false;
+    }
+
+    if (!state.whatsapp) {
+      whatsapp.classList.add('ag-input-error');
+      whatsapp.nextElementSibling.textContent = 'Campo obrigat\xf3rio';
+      valid = false;
+    }
+
+    return valid;
+  }
+
+  function sendToWhatsApp() {
+    if (!validateStep3()) return;
+
+    var nome = document.getElementById('ag-nome').value.trim();
+    var whatsapp = document.getElementById('ag-whatsapp').value.trim();
+    var obs = document.getElementById('ag-obs').value.trim();
+
+    var msg = 'Ol\xe1 Leonardo! Gostaria de agendar:%0A%0A' +
+      '*Servi\xe7o:* ' + state.servico + '%0A' +
+      '*Data:* ' + state.data + '%0A' +
+      '*Hor\xe1rio:* ' + state.hora + '%0A' +
+      '*Nome:* ' + nome + '%0A' +
+      '*WhatsApp:* ' + whatsapp +
+      (obs ? '%0A*Observa\xe7\xf5es:* ' + obs : '');
+
+    saveBooking(state.data, state.hora);
+
+    // SUBSTITUA PELO NUMERO REAL
+    var numero = '559840000000';
+    window.open('https://wa.me/' + numero + '?text=' + msg, '_blank');
+
+    state.nome = nome;
+    state.whatsapp = whatsapp;
+    state.obs = obs;
+    showStep(4);
+  }
+
+  /* ---- PASSO 4: Confirmacao ---- */
+  function updateStep4() {
+    document.getElementById('ag-conf-servico').textContent = state.servico || '—';
+    document.getElementById('ag-conf-data').textContent = state.data || '—';
+    document.getElementById('ag-conf-hora').textContent = state.hora || '—';
+    document.getElementById('ag-conf-nome').textContent = state.nome || '—';
+    document.getElementById('ag-conf-total').textContent = state.preco ? 'R$ ' + state.preco : '—';
+  }
+
+  function resetBooking() {
+    state = { servico: null, preco: null, duracao: null, data: null, hora: null, nome: null, whatsapp: null, obs: null };
+    document.querySelectorAll('.ag-servico-card').forEach(function(c) { c.classList.remove('ag-selected'); });
+    document.querySelectorAll('.ag-cal-day').forEach(function(d) { d.classList.remove('ag-day-selected'); });
+    document.querySelectorAll('.ag-hora').forEach(function(h) { h.classList.remove('ag-hora-selected'); });
+    document.getElementById('ag-nome').value = '';
+    document.getElementById('ag-whatsapp').value = '';
+    document.getElementById('ag-obs').value = '';
+    document.querySelectorAll('.ag-form-input').forEach(function(i) { i.classList.remove('ag-input-error', 'ag-input-ok'); });
+    document.querySelectorAll('.ag-form-error').forEach(function(e) { e.textContent = ''; });
+    document.getElementById('ag-s1-next').disabled = true;
+    document.getElementById('ag-s2-next').disabled = true;
+    showStep(1);
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+})();
+</script>

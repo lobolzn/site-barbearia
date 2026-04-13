@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposta Comercial — Leonardo David Visagista</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e2c97e;
+      --gold-dark: #9a7a2e;
+      --black: #0c0c0c;
+      --dark: #111111;
+      --dark2: #1a1a1a;
+      --dark3: #222222;
+      --gray: #888;
+      --light-gray: #aaa;
+      --off-white: #f5f0e8;
+      --white: #ffffff;
+      --red-soft: #c0392b;
+      --green-soft: #27ae60;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* ── PAGE SETUP ── */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { page-break-after: always; margin: 0; }
+      .page:last-child { page-break-after: auto; }
+    }
+
+    /* ─────────────────────────────────
+       COVER PAGE
+    ───────────────────────────────── */
+    .cover {
+      background: var(--black);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 40px 48px;
+      min-height: 297mm;
+    }
+
+    .cover-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .cover-badge {
+      font-family: 'Outfit', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 4px 10px;
+    }
+
+    .cover-date {
+      font-size: 11px;
+      color: var(--light-gray);
+      font-weight: 300;
+    }
+
+    .cover-orb {
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 40% 40%, rgba(201,168,76,0.22), rgba(201,168,76,0.04) 60%, transparent 80%);
+      pointer-events: none;
+    }
+
+    .cover-body {
+      padding-top: 160px;
+    }
+
+    .cover-eyebrow {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    .cover-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 72px;
+      font-weight: 400;
+      line-height: 1.0;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .cover-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .cover-divider {
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+      margin: 20px 0 24px;
+    }
+
+    .cover-subtitle {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--light-gray);
+      max-width: 380px;
+      line-height: 1.65;
+    }
+
+    .cover-presented {
+      margin-top: 48px;
+    }
+
+    .cover-presented-label {
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 6px;
+    }
+
+    .cover-presented-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+
+    .cover-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 20px;
+    }
+
+    .cover-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+
+    .cover-location {
+      font-size: 11px;
+      color: var(--gray);
+      font-weight: 300;
+    }
+
+    /* ─────────────────────────────────
+       INNER PAGES
+    ───────────────────────────────── */
+    .inner {
+      background: #fff;
+      padding: 0;
+      min-height: 297mm;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 48px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .page-header-section {
+      font-size: 9.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .page-header-doc {
+      font-size: 9.5px;
+      color: #bbb;
+    }
+
+    .page-content {
+      padding: 40px 48px;
+      flex: 1;
+    }
+
+    .page-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 48px;
+      border-top: 1px solid #eee;
+      font-size: 9px;
+      color: #bbb;
+    }
+
+    /* ── SECTION LABELS ── */
+    .section-label {
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      font-weight: 400;
+      line-height: 1.1;
+      color: #111;
+      margin-bottom: 20px;
+    }
+
+    .section-heading em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .body-text {
+      font-size: 12.5px;
+      font-weight: 300;
+      color: #444;
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight-box {
+      border-left: 3px solid var(--gold);
+      background: #faf8f4;
+      padding: 14px 18px;
+      margin: 22px 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .highlight-box strong {
+      font-size: 11px;
+      font-weight: 600;
+      color: #111;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .highlight-box p {
+      font-size: 12px;
+      color: #555;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* ── FEATURES GRID ── */
+    .features-label {
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin: 28px 0 8px;
+    }
+
+    .features-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px;
+      font-weight: 400;
+      color: #111;
+      margin-bottom: 18px;
+    }
+
+    .features-heading em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: #e8e8e8;
+      border: 1px solid #e8e8e8;
+    }
+
+    .feature-card {
+      background: #fff;
+      padding: 16px 18px;
+    }
+
+    .feature-num {
+      font-size: 9px;
+      color: var(--gold);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+
+    .feature-title {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 5px;
+    }
+
+    .feature-desc {
+      font-size: 11.5px;
+      font-weight: 300;
+      color: #666;
+      line-height: 1.55;
+    }
+
+    /* ── COMPARISON TABLE ── */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 22px;
+      font-size: 11.5px;
+    }
+
+    .comparison-table thead tr th {
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      border-bottom: 2px solid #eee;
+    }
+
+    .comparison-table thead .th-blank { background: transparent; }
+    .comparison-table thead .th-booksy { color: #888; background: #fafafa; }
+    .comparison-table thead .th-site {
+      background: var(--dark);
+      color: var(--gold);
+      border-radius: 3px 3px 0 0;
+    }
+
+    .comparison-table tbody tr td {
+      padding: 9px 14px;
+      border-bottom: 1px solid #f0f0f0;
+      vertical-align: top;
+    }
+
+    .comparison-table tbody tr:last-child td { border-bottom: none; }
+
+    .td-label { color: #555; font-weight: 400; width: 140px; }
+    .td-bad { color: var(--red-soft); font-weight: 300; background: #fafafa; }
+    .td-good { color: var(--green-soft); font-weight: 400; background: #f5f9f5; }
+
+    /* ── FUNCS LIST ── */
+    .funcs-list {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+    }
+
+    .funcs-list tr {
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .funcs-list tr:last-child { border-bottom: none; }
+
+    .funcs-list td {
+      padding: 11px 0;
+      vertical-align: top;
+    }
+
+    .func-name {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #111;
+      width: 200px;
+      padding-right: 20px;
+    }
+
+    .func-desc {
+      font-size: 12px;
+      font-weight: 300;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* ── EXCLUSIVE BOX ── */
+    .exclusive-box {
+      background: var(--dark);
+      color: var(--white);
+      border-radius: 6px;
+      padding: 22px 24px;
+      margin-top: 8px;
+    }
+
+    .exclusive-label {
+      font-size: 8.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .exclusive-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .exclusive-sub {
+      font-size: 11.5px;
+      font-weight: 300;
+      color: #bbb;
+      margin-bottom: 14px;
+    }
+
+    .exclusive-bullets {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 20px;
+      list-style: none;
+    }
+
+    .exclusive-bullets li {
+      font-size: 11.5px;
+      font-weight: 300;
+      color: #ccc;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .exclusive-bullets li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ── PRICING BOX ── */
+    .pricing-box {
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+
+    .pricing-header {
+      background: var(--dark);
+      color: var(--white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+    }
+
+    .pricing-header-label {
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .pricing-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      font-weight: 400;
+      color: var(--white);
+    }
+
+    .pricing-items {
+      padding: 4px 0;
+    }
+
+    .pricing-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 9px 20px;
+      border-bottom: 1px solid #f5f5f5;
+      font-size: 12px;
+      font-weight: 300;
+      color: #444;
+    }
+
+    .pricing-item:last-child { border-bottom: none; }
+
+    .pricing-check {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 600;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── INFO BOX ── */
+    .info-box {
+      background: #faf8f4;
+      border: 1px solid #e8e2d6;
+      border-radius: 4px;
+      padding: 12px 16px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 28px;
+    }
+
+    .info-icon {
+      font-size: 14px;
+      color: var(--gold);
+      font-weight: 700;
+      font-style: italic;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .info-text {
+      font-size: 11.5px;
+      font-weight: 300;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .info-text strong { font-weight: 600; color: #333; }
+
+    /* ── STEPS ── */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .step-card {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 300;
+      color: #ddd;
+      line-height: 1;
+      flex-shrink: 0;
+      width: 44px;
+    }
+
+    .step-body {}
+
+    .step-title {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 4px;
+    }
+
+    .step-desc {
+      font-size: 11.5px;
+      font-weight: 300;
+      color: #666;
+      line-height: 1.55;
+    }
+
+    /* ── SUMMARY CALLOUT ── */
+    .summary-callout {
+      border-left: 3px solid var(--gold);
+      background: #faf8f4;
+      padding: 14px 18px;
+      margin-top: 22px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .summary-callout strong {
+      font-size: 11px;
+      font-weight: 600;
+      color: #111;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .summary-callout p {
+      font-size: 12px;
+      color: #555;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════
+       CAPA
+  ═══════════════════════════════ -->
+  <div class="page">
+    <div class="cover">
+      <div class="cover-orb"></div>
+
+      <div class="cover-top">
+        <div class="cover-badge">Proposta Comercial</div>
+        <div class="cover-date">08 de abr de 2026</div>
+      </div>
+
+      <div class="cover-body">
+        <div class="cover-eyebrow">P R E S E N Ç A &nbsp; D I G I T A L &nbsp; P R O F I S S I O N A L</div>
+        <div class="cover-title">Site para<br><em>Barbearia</em></div>
+        <div class="cover-divider"></div>
+        <div class="cover-subtitle">Um site completo, moderno e funcional — desenvolvido sob medida para o seu negócio, com sistema de agendamento online integrado e painel exclusivo de gestão.</div>
+
+        <div class="cover-presented">
+          <div class="cover-presented-label">P R O P O S T A &nbsp; A P R E S E N T A D A &nbsp; A</div>
+          <div class="cover-presented-name">Leonardo David | Visagista</div>
+        </div>
+      </div>
+
+      <div class="cover-footer">
+        <div class="cover-brand">Dev.Studio</div>
+        <div class="cover-location">Caxias — MA</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       PÁGINA 1 — Por que / O que está incluso
+  ═══════════════════════════════ -->
+  <div class="page">
+    <div class="inner">
+      <div class="page-header">
+        <div class="page-header-section">Sobre a proposta</div>
+        <div class="page-header-doc">Proposta Comercial — Leonardo David Visagista</div>
+      </div>
+
+      <div class="page-content">
+        <div class="section-heading" style="font-size:38px;">
+          Por que seu negócio precisa de um <em>site<br>profissional?</em>
+        </div>
+
+        <p class="body-text">
+          Hoje, o primeiro contato de um novo cliente com qualquer negócio é pela internet. Um perfil no Instagram atrai, mas não converte — não transmite profissionalismo, não permite agendamento fácil e não posiciona você como referência no mercado.
+        </p>
+        <br>
+        <p class="body-text">
+          Um site próprio muda esse cenário. Ele funciona 24 horas por dia, 7 dias por semana — recebendo novos clientes, mostrando seu trabalho e permitindo agendamentos mesmo enquanto você dorme.
+        </p>
+
+        <div class="highlight-box">
+          <strong>O que foi desenvolvido para você:</strong>
+          <p>Um site completo, elegante e de alta performance — pensado especificamente para o mercado de visagismo e barbearia. Cada detalhe foi projetado para transmitir a identidade premium do seu trabalho e converter visitantes em clientes agendados.</p>
+        </div>
+
+        <div class="features-label">O que está incluído</div>
+        <div class="features-heading">Tudo que você <em>precisa,</em> pronto para usar</div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-num">01</div>
+            <div class="feature-title">Site completo e publicado</div>
+            <div class="feature-desc">Design exclusivo com sua identidade visual, otimizado para celular, tablet e computador.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-num">02</div>
+            <div class="feature-title">Sistema de agendamento online</div>
+            <div class="feature-desc">Cliente escolhe serviço, data e horário diretamente pelo site — sem precisar ligar ou mandar mensagem.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-num">03</div>
+            <div class="feature-title">Painel exclusivo do barbeiro</div>
+            <div class="feature-desc">Área protegida por login Google onde você visualiza todos os agendamentos organizados.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-num">04</div>
+            <div class="feature-title">Integração com WhatsApp</div>
+            <div class="feature-desc">Ao confirmar o agendamento, o cliente é redirecionado para o seu WhatsApp automaticamente.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-num">05</div>
+            <div class="feature-title">Galeria de trabalhos</div>
+            <div class="feature-desc">Portfólio com lightbox para exibir seus melhores trabalhos e atrair novos clientes.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-num">06</div>
+            <div class="feature-title">SEO e velocidade</div>
+            <div class="feature-desc">Configurado para aparecer no Google e carregar rapidamente, mesmo em conexões lentas.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>Proposta Comercial — Leonardo David Visagista</span>
+        <span>Página 1</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       PÁGINA 2 — Site próprio vs Booksy
+  ═══════════════════════════════ -->
+  <div class="page">
+    <div class="inner">
+      <div class="page-header">
+        <div class="page-header-section">Por que mudar?</div>
+        <div class="page-header-doc">Proposta Comercial — Leonardo David Visagista</div>
+      </div>
+
+      <div class="page-content">
+        <div class="section-heading">Site próprio vs. <em>Booksy</em></div>
+
+        <p class="body-text">
+          O Booksy é uma boa ferramenta — mas é uma plataforma genérica, de terceiros, com mensalidade obrigatória. Um site próprio coloca você no controle total da sua presença digital, sem depender de nenhuma empresa.
+        </p>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th class="th-blank"></th>
+              <th class="th-booksy">Booksy</th>
+              <th class="th-site">Site Próprio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-label">Custo</td>
+              <td class="td-bad">Mensalidade recorrente</td>
+              <td class="td-good">Pagamento único</td>
+            </tr>
+            <tr>
+              <td class="td-label">Domínio</td>
+              <td class="td-bad">booksy.com/seu-nome</td>
+              <td class="td-good">leonardodavid.com.br</td>
+            </tr>
+            <tr>
+              <td class="td-label">Design</td>
+              <td class="td-bad">Template genérico igual ao de todos</td>
+              <td class="td-good">Exclusivo, com sua identidade visual</td>
+            </tr>
+            <tr>
+              <td class="td-label">Google (SEO)</td>
+              <td class="td-bad">Aparece o Booksy, não você</td>
+              <td class="td-good">Seu nome aparece nas buscas</td>
+            </tr>
+            <tr>
+              <td class="td-label">WhatsApp</td>
+              <td class="td-bad">Sem integração direta</td>
+              <td class="td-good">Confirmação automática no seu WhatsApp</td>
+            </tr>
+            <tr>
+              <td class="td-label">Galeria de trabalhos</td>
+              <td class="td-bad">Limitada</td>
+              <td class="td-good">Portfólio completo com lightbox</td>
+            </tr>
+            <tr>
+              <td class="td-label">Controle dos dados</td>
+              <td class="td-bad">Dados na plataforma deles</td>
+              <td class="td-good">100% seus, no seu banco de dados</td>
+            </tr>
+            <tr>
+              <td class="td-label">Dependência</td>
+              <td class="td-bad">Plataforma de terceiros</td>
+              <td class="td-good">Independente — você é o dono</td>
+            </tr>
+            <tr>
+              <td class="td-label">Profissionalismo</td>
+              <td class="td-bad">Passa imagem de negócio iniciante</td>
+              <td class="td-good">Posiciona você como referência premium</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="summary-callout">
+          <strong>Em resumo:</strong>
+          <p>O Booksy resolve o agendamento, mas não constrói a sua marca. Um site próprio faz os dois — e ainda coloca seu nome no Google, no domínio certo, com a identidade visual que o seu trabalho merece.</p>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>Proposta Comercial — Leonardo David Visagista</span>
+        <span>Página 2</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       PÁGINA 3 — Funcionalidades
+  ═══════════════════════════════ -->
+  <div class="page">
+    <div class="inner">
+      <div class="page-header">
+        <div class="page-header-section">Funcionalidades</div>
+        <div class="page-header-doc">Proposta Comercial — Leonardo David Visagista</div>
+      </div>
+
+      <div class="page-content">
+        <div class="section-heading">Cada detalhe pensado<br>para o seu <em>cliente</em></div>
+
+        <table class="funcs-list">
+          <tbody>
+            <tr>
+              <td class="func-name">Agendamento em 4 passos simples</td>
+              <td class="func-desc">O cliente escolhe o serviço, a data no calendário interativo, o horário disponível e confirma com seus dados — tudo em uma experiência fluida e moderna.</td>
+            </tr>
+            <tr>
+              <td class="func-name">Bloqueio automático de horários</td>
+              <td class="func-desc">Quando um horário é agendado, ele é bloqueado automaticamente no sistema — impedindo duplo agendamento sem qualquer ação sua.</td>
+            </tr>
+            <tr>
+              <td class="func-name">Horários em tempo real</td>
+              <td class="func-desc">O cliente vê apenas os horários realmente disponíveis, atualizados em tempo real. Horários passados são ocultados automaticamente.</td>
+            </tr>
+            <tr>
+              <td class="func-name">Confirmação via WhatsApp</td>
+              <td class="func-desc">Após o agendamento, o cliente é direcionado automaticamente para o seu WhatsApp com os dados já preenchidos — você confirma com um toque.</td>
+            </tr>
+            <tr>
+              <td class="func-name">100% responsivo</td>
+              <td class="func-desc">O site se adapta perfeitamente a qualquer tela — celular, tablet ou computador. A maioria dos seus clientes vai agendar pelo celular.</td>
+            </tr>
+            <tr>
+              <td class="func-name">Otimizado para o Google (SEO)</td>
+              <td class="func-desc">Configurado com meta tags, sitemap e Schema.org para aparecer nas buscas do Google quando alguém procurar por "visagista em Caxias-MA".</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="exclusive-box">
+          <div class="exclusive-label">EXCLUSIVO PARA VOCÊ</div>
+          <div class="exclusive-title">Painel de Agendamentos</div>
+          <div class="exclusive-sub">Área protegida por login com Google — só você acessa.<br>Visualize agendamentos por data, com nome do cliente, WhatsApp e serviço.</div>
+          <ul class="exclusive-bullets">
+            <li>Próximos agendamentos</li>
+            <li>Histórico completo</li>
+            <li>Nome e WhatsApp do cliente</li>
+            <li>Acesso seguro com Google</li>
+            <li>Contador de agendamentos</li>
+            <li>Agendamentos de hoje em destaque</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>Proposta Comercial — Leonardo David Visagista</span>
+        <span>Página 3</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       PÁGINA 4 — Investimento + Próximos passos
+  ═══════════════════════════════ -->
+  <div class="page">
+    <div class="inner">
+      <div class="page-header">
+        <div class="page-header-section">Investimento</div>
+        <div class="page-header-doc">Proposta Comercial — Leonardo David Visagista</div>
+      </div>
+
+      <div class="page-content">
+        <div class="section-heading">Valor do <em>projeto</em></div>
+
+        <div class="pricing-box">
+          <div class="pricing-header">
+            <div class="pricing-header-label">PACOTE COMPLETO — SITE PROFISSIONAL</div>
+            <div class="pricing-value">R$ 1.200,00</div>
+          </div>
+          <div class="pricing-items">
+            <div class="pricing-item"><span class="pricing-check">✓</span> Site completo com design exclusivo e identidade visual personalizada</div>
+            <div class="pricing-item"><span class="pricing-check">✓</span> Sistema de agendamento online com calendário interativo</div>
+            <div class="pricing-item"><span class="pricing-check">✓</span> Painel exclusivo do barbeiro com login seguro pelo Google</div>
+            <div class="pricing-item"><span class="pricing-check">✓</span> Integração com WhatsApp e bloqueio automático de horários</div>
+            <div class="pricing-item"><span class="pricing-check">✓</span> Galeria de trabalhos, seção de serviços e preços</div>
+            <div class="pricing-item"><span class="pricing-check">✓</span> Hospedagem e publicação incluídas — site no ar no mesmo dia</div>
+            <div class="pricing-item"><span class="pricing-check">✓</span> SEO configurado para aparecer no Google</div>
+            <div class="pricing-item"><span class="pricing-check">✓</span> 30 dias de suporte após a entrega</div>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <div class="info-icon">i</div>
+          <div class="info-text">
+            <strong>Domínio personalizado (opcional):</strong> Para utilizar o endereço <strong>leonardodavid.com.br</strong>, é necessário o registro do domínio junto ao provedor, com custo de <strong>R$ 40,00/ano</strong> — pago diretamente pelo cliente. O valor não está incluso no pacote acima.
+          </div>
+        </div>
+
+        <div class="section-label">Como avançar</div>
+        <div class="section-heading" style="font-size:34px; margin-bottom:20px;">Próximos <em>passos</em></div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <div class="step-title">Aprovação da proposta</div>
+              <div class="step-desc">Você confirma o interesse e alinhamos os últimos detalhes — cores, fotos, textos e informações do seu negócio.</div>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <div class="step-title">Personalização com seus dados</div>
+              <div class="step-desc">Inserimos suas fotos, preços, horários de funcionamento, número de WhatsApp e informações da sua barbearia.</div>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <div class="step-title">Publicação e entrega</div>
+              <div class="step-desc">O site vai ao ar com hospedagem configurada e você recebe o acesso completo ao painel de agendamentos.</div>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <div class="step-title">Suporte por 30 dias</div>
+              <div class="step-desc">Qualquer ajuste ou dúvida nos primeiros 30 dias — estamos disponíveis para garantir que tudo funcione perfeitamente.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>Proposta Comercial — Leonardo David Visagista</span>
+        <span>Página 4</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

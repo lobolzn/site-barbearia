@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /meus-agendamentos.html
+
+Sitemap: https://leonardodavid.com.br/sitemap.xml

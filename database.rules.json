@@ -1,0 +1,16 @@
+{
+  "rules": {
+    "agendamentos": {
+      "$date": {
+        ".read": true,
+        "$hora": {
+          ".write": "!data.exists()"
+        }
+      }
+    },
+    "agendamentos-completos": {
+      ".read": "auth != null && auth.token.email === 'eduhloboh@gmail.com'",
+      ".write": true
+    }
+  }
+}

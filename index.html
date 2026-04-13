@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leonardo David | Visagista</title>
+  <meta name="description"
+    content="Leonardo David, visagista profissional. Corte com visagismo, desondulação e consultoria de imagem personalizada." />
+  <meta name="keywords" content="visagista, corte masculino, desondulação, visagismo, barbearia" />
+  <meta property="og:title" content="Leonardo David | Visagista" />
+  <meta property="og:description" content="Atendimento personalizado com análise facial e consultoria de imagem." />
+  <meta property="og:image" content="photos/hero.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://leonardodavid.com.br" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+</head>
+
+<body>
+
+  <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+
+  <nav id="nav">
+    <a href="#" class="nav-logo">Leonardo David <span>| Visagista</span></a>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Servi&#231;os</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#agendar">Contato</a></li>
+    </ul>
+    <a href="#agendar" class="nav-cta">Agendar</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menu de navegação" aria-modal="true">
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Servi&#231;os</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#agendar">Contato</a>
+  </div>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-line"></div>
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-tag">Visagismo profissional</div>
+          <h1 class="hero-title">
+            Mais do que<br>um corte.<br><em>Uma transforma&#231;&#227;o.</em>
+          </h1>
+          <p class="hero-desc">Atendimento personalizado, feito sob medida para cada cliente.</p>
+          <div class="hero-actions">
+            <a href="#agendar" class="btn-primary">Agendar hor&#225;rio</a>
+            <a href="#servicos" class="btn-ghost">Ver servi&#231;os</a>
+          </div>
+        </div>
+        <div class="hero-image-card">
+          <div class="image-wrapper">
+            <picture>
+              <source srcset="photos/hero.webp" type="image/webp" />
+              <img src="photos/hero.jpg" alt="Leonardo David — Visagista" loading="eager" />
+            </picture>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <section class="sobre" id="sobre">
+      <div class="fade-in-left">
+        <div class="section-label">Quem somos</div>
+        <h2 class="section-title">Arte e t&#233;cnica a servi&#231;o da sua <em>identidade</em></h2>
+        <p class="sobre-text">Leonardo David &#233; visagista profissional especializado em transformar a apar&#234;ncia
+          masculina
+          com precis&#227;o e sensibilidade art&#237;stica. Cada atendimento come&#231;a com uma an&#225;lise cuidadosa
+          do rosto, estilo e
+          personalidade do cliente.</p>
+        <p class="sobre-text">Com dom&#237nio t&#233;cnico em corte, desondula&#231;&#227;o e consultoria de imagem,
+          Leonardo oferece uma
+          experi&#234;ncia &#250;nica — n&#227;o apenas um servi&#231;o, mas uma jornada de autoconhecimento e estilo.
+          Atendimento em Caxias-MA.
+        </p>
+      </div>
+      <div class="sobre-img fade-in-right">
+        <picture>
+          <source srcset="photos/leonardo-sobre.webp" type="image/webp" />
+          <img src="photos/leonardo-sobre.jpg" alt="Leonardo David Visagista" loading="lazy" />
+        </picture>
+      </div>
+    </section>
+
+    <section class="servicos" id="servicos">
+      <div class="servicos-header fade-in">
+        <div>
+          <div class="section-label">O que oferecemos</div>
+          <h2 class="section-title">Servi&#231;os</h2>
+        </div>
+        <p style="font-size:13px;color:var(--gray);max-width:280px;text-align:right;line-height:1.7;">Cada servi&#231;o
+          &#233;
+          pensado para revelar o melhor de voc&#234;.</p>
+      </div>
+
+      <div class="servicos-lista fade-in-scale">
+        <div class="servico-item">
+          <div class="servico-num">01</div>
+          <div class="servico-body">
+            <div class="servico-nome">Corte com Leonardo</div>
+            <div class="servico-desc">Corte personalizado com an&#225;lise de visagismo e estilo individual.</div>
+          </div>
+          <div class="servico-right">
+            <span class="servico-preco">R$ 150</span>
+            <span class="servico-duracao">1h</span>
+          </div>
+        </div>
+
+        <div class="servico-item">
+          <div class="servico-num">02</div>
+          <div class="servico-body">
+            <div class="servico-nome">Desondula&#231;&#227;o</div>
+            <div class="servico-desc">Tratamento profissional para alisar e disciplinar os fios com durabilidade.</div>
+          </div>
+          <div class="servico-right">
+            <span class="servico-preco">R$ 150</span>
+            <span class="servico-duracao">1h 30min</span>
+          </div>
+        </div>
+
+        <div class="servico-item destaque">
+          <div class="servico-num">03</div>
+          <div class="servico-body">
+            <div class="badge-popular">Mais procurado</div>
+            <div class="servico-nome">Corte com Visagismo</div>
+            <div class="servico-desc">Atendimento completo com consultoria de imagem, an&#225;lise facial e corte sob
+              medida
+              para cada cliente.</div>
+          </div>
+          <div class="servico-right">
+            <span class="servico-preco">R$ 220</span>
+            <span class="servico-duracao">1h</span>
+          </div>
+        </div>
+
+        <div class="servico-item">
+          <div class="servico-num">04</div>
+          <div class="servico-body">
+            <div class="servico-nome">Aparar Barba</div>
+            <div class="servico-desc">Modelagem e aparo preciso para uma barba impec&#225;vel.</div>
+          </div>
+          <div class="servico-right">
+            <span class="servico-preco">R$ 75</span>
+            <span class="servico-duracao">20min</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="galeria" id="galeria">
+      <div class="galeria-header fade-in">
+        <div class="section-label">Portf&#243;lio</div>
+        <h2 class="section-title">Galeria de <em>trabalhos</em></h2>
+      </div>
+      <div class="galeria-grid">
+        <div class="galeria-item fade-in">
+          <picture>
+            <source srcset="photos/gallery/1.webp" type="image/webp" />
+            <img src="photos/gallery/1.jpg" alt="Resultado de corte" loading="lazy" />
+          </picture>
+        </div>
+        <div class="galeria-item fade-in">
+          <picture>
+            <source srcset="photos/gallery/2.webp" type="image/webp" />
+            <img src="photos/gallery/2.jpg" alt="Leonardo em a&#231;&#227;o" loading="lazy" />
+          </picture>
+        </div>
+        <div class="galeria-item fade-in">
+          <picture>
+            <source srcset="photos/gallery/3.webp" type="image/webp" />
+            <img src="photos/gallery/3.jpg" alt="Corte com visagismo" loading="lazy" />
+          </picture>
+        </div>
+        <div class="galeria-item fade-in">
+          <picture>
+            <source srcset="photos/gallery/4.webp" type="image/webp" />
+            <img src="photos/gallery/4.jpg" alt="Detalhe de barbearia" loading="lazy" />
+          </picture>
+        </div>
+      </div>
+      <div style="margin-top:24px;text-align:center;">
+        <a href="https://www.instagram.com/leonardodavidvisagista/" target="_blank" rel="noopener noreferrer"
+          class="btn-ghost">Ver mais no Instagram</a>
+      </div>
+    </section>
+
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" aria-label="Fechar">&times;</button>
+      <button class="lightbox-nav prev" aria-label="Anterior">&#10094;</button>
+      <img src="" alt="Imagem em tela cheia" />
+      <button class="lightbox-nav next" aria-label="Pr&#243;ximo">&#10095;</button>
+    </div>
+
+    <section class="ag-section" id="agendar">
+      <div class="horarios-bloco">
+        <div class="section-label">Horários</div>
+        <ul class="horarios-lista">
+          <li><span>Segunda a Sexta</span><span>9h – 19h</span></li>
+          <li><span>Sábado</span><span>9h – 17h</span></li>
+          <li><span>Domingo</span><span>Fechado</span></li>
+        </ul>
+      </div>
+      <div class="ag-progress-bar">
+        <div class="ag-step" data-step="1">
+          <div class="ag-step-num">1</div>
+          <div class="ag-step-label">Servi&#231;o</div>
+        </div>
+        <div class="ag-step-line"></div>
+        <div class="ag-step" data-step="2">
+          <div class="ag-step-num">2</div>
+          <div class="ag-step-label">Data e hora</div>
+        </div>
+        <div class="ag-step-line"></div>
+        <div class="ag-step" data-step="3">
+          <div class="ag-step-num">3</div>
+          <div class="ag-step-label">Seus dados</div>
+        </div>
+        <div class="ag-step-line"></div>
+        <div class="ag-step" data-step="4">
+          <div class="ag-step-num">4</div>
+          <div class="ag-step-label">Confirma&#231;&#227;o</div>
+        </div>
+      </div>
+
+      <div class="ag-container">
+
+        <div class="ag-panel" id="ag-step-1">
+          <div class="ag-header">
+            <div class="ag-section-label">Agende online</div>
+            <h2 class="ag-title">Escolha o <em>servi&#231;o</em></h2>
+            <p class="ag-title-hint">Pode selecionar mais de um</p>
+          </div>
+          <div class="ag-servicos-grid">
+            <div class="ag-servico-card" data-servico="Corte com Leonardo" data-preco="150" data-duracao="1h">
+              <div class="ag-servico-top">
+                <div class="ag-servico-num">01</div>
+                <div class="ag-servico-badge" style="display:none;">Mais procurado</div>
+              </div>
+              <div class="ag-servico-nome">Corte com Leonardo</div>
+              <div class="ag-servico-desc">Corte personalizado com an&#225;lise de visagismo e estilo individual.</div>
+              <div class="ag-servico-footer">
+                <div class="ag-servico-preco">R$ 150</div>
+                <div class="ag-servico-duracao">1h</div>
+              </div>
+              <div class="ag-check"><svg viewBox="0 0 24 24" width="12" height="12">
+                  <polyline points="20 6 9 17 4 12" stroke="currentColor" stroke-width="2.5" fill="none" />
+                </svg></div>
+            </div>
+            <div class="ag-servico-card" data-servico="Desondula&#231;&#227;o" data-preco="150" data-duracao="1h 30min">
+              <div class="ag-servico-top">
+                <div class="ag-servico-num">02</div>
+                <div class="ag-servico-badge" style="display:none;">Mais procurado</div>
+              </div>
+              <div class="ag-servico-nome">Desondula&#231;&#227;o</div>
+              <div class="ag-servico-desc">Tratamento profissional para alisar e disciplinar os fios com durabilidade.
+              </div>
+              <div class="ag-servico-footer">
+                <div class="ag-servico-preco">R$ 150</div>
+                <div class="ag-servico-duracao">1h 30min</div>
+              </div>
+              <div class="ag-check"><svg viewBox="0 0 24 24" width="12" height="12">
+                  <polyline points="20 6 9 17 4 12" stroke="currentColor" stroke-width="2.5" fill="none" />
+                </svg></div>
+            </div>
+            <div class="ag-servico-card ag-card-destaque" data-servico="Corte com Visagismo" data-preco="220"
+              data-duracao="1h">
+              <div class="ag-servico-top">
+                <div class="ag-servico-num">03</div>
+                <div class="ag-servico-badge">Mais procurado</div>
+              </div>
+              <div class="ag-servico-nome">Corte com Visagismo</div>
+              <div class="ag-servico-desc">Atendimento completo com consultoria de imagem, an&#225;lise facial e corte
+                sob medida.</div>
+              <div class="ag-servico-footer">
+                <div class="ag-servico-preco">R$ 220</div>
+                <div class="ag-servico-duracao">1h</div>
+              </div>
+              <div class="ag-check"><svg viewBox="0 0 24 24" width="12" height="12">
+                  <polyline points="20 6 9 17 4 12" stroke="currentColor" stroke-width="2.5" fill="none" />
+                </svg></div>
+            </div>
+            <div class="ag-servico-card" data-servico="Aparar Barba" data-preco="75" data-duracao="20min">
+              <div class="ag-servico-top">
+                <div class="ag-servico-num">04</div>
+                <div class="ag-servico-badge" style="display:none;">Mais procurado</div>
+              </div>
+              <div class="ag-servico-nome">Aparar Barba</div>
+              <div class="ag-servico-desc">Modelagem e aparo preciso para uma barba impec&#225;vel.</div>
+              <div class="ag-servico-footer">
+                <div class="ag-servico-preco">R$ 75</div>
+                <div class="ag-servico-duracao">20min</div>
+              </div>
+              <div class="ag-check"><svg viewBox="0 0 24 24" width="12" height="12">
+                  <polyline points="20 6 9 17 4 12" stroke="currentColor" stroke-width="2.5" fill="none" />
+                </svg></div>
+            </div>
+          </div>
+          <div class="ag-s1-total" id="ag-s1-total">
+            <span id="ag-s1-total-label"></span>
+          </div>
+          <div class="ag-actions">
+            <button class="ag-btn-primary" id="ag-s1-next" disabled>Continuar <span>&#8594;</span></button>
+          </div>
+        </div>
+
+        <div class="ag-panel" id="ag-step-2" style="display:none;">
+          <div class="ag-header">
+            <div class="ag-section-label">Agende online</div>
+            <h2 class="ag-title">Escolha <em>data e hora</em></h2>
+          </div>
+          <div class="ag-datahora-layout">
+            <div class="ag-calendar">
+              <div class="ag-cal-header">
+                <button class="ag-cal-nav" id="ag-cal-prev" aria-label="M&#234;s anterior">
+                  <svg viewBox="0 0 24 24" width="18" height="18">
+                    <polyline points="15 18 9 12 15 6" stroke="currentColor" stroke-width="1.5" fill="none" />
+                  </svg>
+                </button>
+                <div class="ag-cal-mes" id="ag-cal-mes"></div>
+                <button class="ag-cal-nav" id="ag-cal-next" aria-label="Pr&#243;ximo m&#234;s">
+                  <svg viewBox="0 0 24 24" width="18" height="18">
+                    <polyline points="9 18 15 12 9 6" stroke="currentColor" stroke-width="1.5" fill="none" />
+                  </svg>
+                </button>
+              </div>
+              <div class="ag-cal-dias-header">
+                <span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>S&#225;b</span>
+              </div>
+              <div class="ag-cal-grid" id="ag-cal-grid"></div>
+            </div>
+            <div class="ag-horarios">
+              <div class="ag-horarios-loading" id="ag-horarios-loading" style="display:none;">
+                <div class="ag-spinner"></div>
+              </div>
+              <div class="ag-horarios-tabs">
+                <button class="ag-tab active" data-periodo="manha" id="ag-tab-manha">Manh&#227;</button>
+                <button class="ag-tab" data-periodo="tarde" id="ag-tab-tarde">Tarde</button>
+              </div>
+              <div class="ag-horarios-grid" id="ag-horarios-manha">
+                <div class="ag-hora" data-hora="8:00">8:00</div>
+                <div class="ag-hora" data-hora="8:30">8:30</div>
+                <div class="ag-hora" data-hora="9:00">9:00</div>
+                <div class="ag-hora" data-hora="9:15">9:15</div>
+                <div class="ag-hora" data-hora="9:30">9:30</div>
+                <div class="ag-hora" data-hora="9:45">9:45</div>
+                <div class="ag-hora" data-hora="10:00">10:00</div>
+                <div class="ag-hora" data-hora="10:15">10:15</div>
+                <div class="ag-hora" data-hora="10:30">10:30</div>
+                <div class="ag-hora" data-hora="10:45">10:45</div>
+                <div class="ag-hora" data-hora="11:00">11:00</div>
+                <div class="ag-hora" data-hora="11:30">11:30</div>
+              </div>
+              <div class="ag-horarios-grid" id="ag-horarios-tarde" style="display:none;">
+                <div class="ag-hora" data-hora="12:00">12:00</div>
+                <div class="ag-hora" data-hora="12:30">12:30</div>
+                <div class="ag-hora" data-hora="13:00">13:00</div>
+                <div class="ag-hora" data-hora="13:30">13:30</div>
+                <div class="ag-hora" data-hora="14:00">14:00</div>
+                <div class="ag-hora" data-hora="14:15">14:15</div>
+                <div class="ag-hora" data-hora="14:30">14:30</div>
+                <div class="ag-hora" data-hora="14:45">14:45</div>
+                <div class="ag-hora" data-hora="15:00">15:00</div>
+                <div class="ag-hora" data-hora="15:15">15:15</div>
+                <div class="ag-hora" data-hora="15:30">15:30</div>
+                <div class="ag-hora" data-hora="15:45">15:45</div>
+                <div class="ag-hora" data-hora="16:00">16:00</div>
+                <div class="ag-hora" data-hora="16:15">16:15</div>
+                <div class="ag-hora" data-hora="16:30">16:30</div>
+                <div class="ag-hora" data-hora="16:45">16:45</div>
+                <div class="ag-hora" data-hora="17:00">17:00</div>
+              </div>
+            </div>
+          </div>
+          <div class="ag-actions">
+            <button class="ag-btn-ghost" id="ag-s2-back"><span>&#8592;</span> Voltar</button>
+            <button class="ag-btn-primary" id="ag-s2-next" disabled>Continuar <span>&#8594;</span></button>
+          </div>
+        </div>
+
+        <div class="ag-panel" id="ag-step-3" style="display:none;">
+          <div class="ag-header">
+            <div class="ag-section-label">Agende online</div>
+            <h2 class="ag-title">Seus <em>dados</em></h2>
+          </div>
+          <div class="ag-step3-layout">
+            <div class="ag-resumo">
+              <div class="ag-resumo-titulo">Resumo do agendamento</div>
+              <div class="ag-resumo-linha">
+                <span class="ag-resumo-label">Servi&#231;o</span>
+                <span class="ag-resumo-val" id="ag-resumo-servico">&#8212;</span>
+              </div>
+              <div class="ag-resumo-linha">
+                <span class="ag-resumo-label">Data</span>
+                <span class="ag-resumo-val" id="ag-resumo-data">&#8212;</span>
+              </div>
+              <div class="ag-resumo-linha">
+                <span class="ag-resumo-label">Hor&#225;rio</span>
+                <span class="ag-resumo-val" id="ag-resumo-hora">&#8212;</span>
+              </div>
+              <div class="ag-resumo-linha">
+                <span class="ag-resumo-label">Total</span>
+                <span class="ag-resumo-val ag-resumo-total" id="ag-resumo-total">&#8212;</span>
+              </div>
+            </div>
+            <div class="ag-form">
+              <div class="ag-form-group">
+                <label class="ag-form-label" for="ag-nome">Nome completo</label>
+                <input class="ag-form-input" id="ag-nome" type="text" placeholder="Seu nome completo"
+                  autocomplete="name" />
+                <span class="ag-form-error"></span>
+              </div>
+              <div class="ag-form-group">
+                <label class="ag-form-label" for="ag-whatsapp">WhatsApp</label>
+                <input class="ag-form-input" id="ag-whatsapp" type="tel" placeholder="(99) 99999-9999"
+                  autocomplete="tel" />
+                <span class="ag-form-error"></span>
+              </div>
+              <div class="ag-form-group">
+                <label class="ag-form-label" for="ag-obs">Observa&#231;&#245;es <span
+                    style="color:#555;font-size:9px;letter-spacing:1px;">(opcional)</span></label>
+                <textarea class="ag-form-textarea" id="ag-obs" rows="3"
+                  placeholder="Alguma prefer&#234;ncia ou observa&#231;&#227;o..."></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="ag-actions">
+            <button class="ag-btn-ghost" id="ag-s3-back"><span>&#8592;</span> Voltar</button>
+            <button class="ag-btn-primary" id="ag-s3-next">Confirmar agendamento <span>&#8594;</span></button>
+          </div>
+        </div>
+
+        <div class="ag-panel" id="ag-step-4" style="display:none;">
+          <div class="ag-confirmacao">
+            <div class="ag-check-circle">
+              <svg viewBox="0 0 24 24" width="36" height="36">
+                <polyline points="20 6 9 17 4 12" stroke="#080808" stroke-width="2.5" fill="none" />
+              </svg>
+            </div>
+            <h2 class="ag-confirm-titulo">Agendamento <em>confirmado!</em></h2>
+            <p class="ag-confirm-msg">Sua solicita&#231;&#227;o foi enviada via WhatsApp. Entraremos em contato em breve
+              para confirmar os detalhes.</p>
+            <div class="ag-confirm-card">
+              <div class="ag-resumo-titulo">Detalhes</div>
+              <div class="ag-resumo-linha">
+                <span class="ag-resumo-label">Servi&#231;o</span>
+                <span class="ag-resumo-val" id="ag-conf-servico">&#8212;</span>
+              </div>
+              <div class="ag-resumo-linha">
+                <span class="ag-resumo-label">Data</span>
+                <span class="ag-resumo-val" id="ag-conf-data">&#8212;</span>
+              </div>
+              <div class="ag-resumo-linha">
+                <span class="ag-resumo-label">Hor&#225;rio</span>
+                <span class="ag-resumo-val" id="ag-conf-hora">&#8212;</span>
+              </div>
+              <div class="ag-resumo-linha">
+                <span class="ag-resumo-label">Cliente</span>
+                <span class="ag-resumo-val" id="ag-conf-nome">&#8212;</span>
+              </div>
+              <div class="ag-resumo-linha">
+                <span class="ag-resumo-label">Total</span>
+                <span class="ag-resumo-val ag-resumo-total" id="ag-conf-total">&#8212;</span>
+              </div>
+            </div>
+            <p class="ag-aviso">&#9888;&#65039; Seu agendamento est&#225; sujeito &#224; confirma&#231;&#227;o. Aguarde o retorno de Leonardo pelo
+              WhatsApp.</p>
+            <button class="ag-btn-ghost" id="ag-new-booking">Fazer novo agendamento</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="ag-toast" class="ag-toast" role="status" aria-live="polite"></div>
+
+            <script>
+        (function () {
+          var firebaseConfig = {
+            apiKey: "AIzaSyBgUdYzrPykpQA86f_B1mAGSr7zoxZwFDM",
+            authDomain: "site-barbearia-9add5.firebaseapp.com",
+            databaseURL: "https://site-barbearia-9add5-default-rtdb.firebaseio.com",
+            projectId: "site-barbearia-9add5",
+            storageBucket: "site-barbearia-9add5.firebasestorage.app",
+            messagingSenderId: "677128081916",
+            appId: "1:677128081916:web:4ca7538328bb20885c2279"
+          };
+          firebase.initializeApp(firebaseConfig);
+          var db = firebase.database();
+
+          var currentStep = 1;
+          var state = { servicos: [], data: null, hora: null, nome: null, whatsapp: null, obs: null };
+          var calDate = new Date();
+          var activePeriodo = 'manha';
+
+          function init() {
+            initServicos();
+            initServicosExternos();
+            initCalendario();
+            initHorarios();
+            initStep3();
+            initNavButtons();
+            updateProgressBar();
+          }
+
+          function initServicosExternos() {
+            var items = document.querySelectorAll('.servico-item');
+            items.forEach(function (item) {
+              item.addEventListener('click', function () {
+                var nome = item.querySelector('.servico-nome').textContent.trim();
+                var agCard = document.querySelector('.ag-servico-card[data-servico="' + nome + '"]');
+                if (agCard) {
+                  agCard.click();
+                  item.classList.toggle('selecionado', agCard.classList.contains('ag-selected'));
+                }
+                document.getElementById('agendar').scrollIntoView({ behavior: 'smooth' });
+              });
+            });
+          }
+
+          function updateProgressBar() {
+            document.querySelectorAll('.ag-step').forEach(function (el) {
+              var s = +el.dataset.step;
+              el.classList.remove('ag-active', 'ag-done');
+              if (s === currentStep) { el.classList.add('ag-active'); }
+              else if (s < currentStep) { el.classList.add('ag-done'); }
+            });
+          }
+
+          function showStep(n) {
+            document.querySelectorAll('.ag-panel').forEach(function (p) { p.style.display = 'none'; });
+            var panel = document.getElementById('ag-step-' + n);
+            if (panel) panel.style.display = 'block';
+            currentStep = n;
+            updateProgressBar();
+            if (n === 3) updateStep3();
+            if (n === 4) updateStep4();
+            window.scrollTo({ top: document.getElementById('agendar').offsetTop - 80, behavior: 'smooth' });
+          }
+
+          function goNext() { if (currentStep < 4) showStep(currentStep + 1); }
+          function goBack() { if (currentStep > 1) showStep(currentStep - 1); }
+
+          function initNavButtons() {
+            var next1 = document.getElementById('ag-s1-next');
+            if (next1) next1.addEventListener('click', goNext);
+            var back2 = document.getElementById('ag-s2-back');
+            if (back2) back2.addEventListener('click', goBack);
+            var next2 = document.getElementById('ag-s2-next');
+            if (next2) next2.addEventListener('click', goNext);
+            var back3 = document.getElementById('ag-s3-back');
+            if (back3) back3.addEventListener('click', goBack);
+            var next3 = document.getElementById('ag-s3-next');
+            if (next3) next3.addEventListener('click', sendToWhatsApp);
+            var newBook = document.getElementById('ag-new-booking');
+            if (newBook) newBook.addEventListener('click', resetBooking);
+          }
+
+          function parseDuracao(str) {
+            var mins = 0;
+            var h = str.match(/(\d+)h/); var m = str.match(/(\d+)min/);
+            if (h) mins += +h[1] * 60; if (m) mins += +m[1];
+            return mins;
+          }
+
+          function formatDuracao(mins) {
+            if (mins < 60) return mins + 'min';
+            var h = Math.floor(mins / 60); var m = mins % 60;
+            return h + 'h' + (m ? ' ' + m + 'min' : '');
+          }
+
+          function calcTotals() {
+            var total = 0; var mins = 0; var nomes = [];
+            state.servicos.forEach(function (s) { total += +s.preco; mins += parseDuracao(s.duracao); nomes.push(s.nome); });
+            return { total: total, duracao: formatDuracao(mins), nomes: nomes };
+          }
+
+          function updateS1Total() {
+            var el = document.getElementById('ag-s1-total');
+            var label = document.getElementById('ag-s1-total-label');
+            if (!el || !label) return;
+            if (state.servicos.length === 0) { el.classList.remove('visible'); return; }
+            var t = calcTotals();
+            label.textContent = state.servicos.length + ' servi\xe7o' + (state.servicos.length > 1 ? 's' : '') +
+              ' \u2014 R$ ' + t.total + ' \u00b7 ' + t.duracao;
+            el.classList.add('visible');
+          }
+
+          function initServicos() {
+            var cards = document.querySelectorAll('.ag-servico-card');
+            var nextBtn = document.getElementById('ag-s1-next');
+            cards.forEach(function (card) {
+              card.addEventListener('click', function () {
+                var idx = -1;
+                for (var i = 0; i < state.servicos.length; i++) {
+                  if (state.servicos[i].nome === card.dataset.servico) { idx = i; break; }
+                }
+                if (idx === -1) {
+                  state.servicos.push({ nome: card.dataset.servico, preco: card.dataset.preco, duracao: card.dataset.duracao });
+                  card.classList.add('ag-selected');
+                } else {
+                  state.servicos.splice(idx, 1);
+                  card.classList.remove('ag-selected');
+                }
+                nextBtn.disabled = state.servicos.length === 0;
+                updateS1Total();
+              });
+            });
+          }
+
+          function initCalendario() {
+            renderCalendar();
+            document.getElementById('ag-cal-prev').addEventListener('click', function () {
+              calDate.setMonth(calDate.getMonth() - 1);
+              renderCalendar();
+            });
+            document.getElementById('ag-cal-next').addEventListener('click', function () {
+              calDate.setMonth(calDate.getMonth() + 1);
+              renderCalendar();
+            });
+          }
+
+          function renderCalendar() {
+            var year = calDate.getFullYear();
+            var month = calDate.getMonth();
+            var meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+            document.getElementById('ag-cal-mes').textContent = meses[month] + ' ' + year;
+            var grid = document.getElementById('ag-cal-grid');
+            grid.innerHTML = '';
+            var firstDay = new Date(year, month, 1).getDay();
+            var daysInMonth = new Date(year, month + 1, 0).getDate();
+            var today = new Date(); today.setHours(0, 0, 0, 0);
+            for (var i = 0; i < firstDay; i++) {
+              var empty = document.createElement('div');
+              empty.className = 'ag-cal-day ag-day-empty';
+              grid.appendChild(empty);
+            }
+            for (var d = 1; d <= daysInMonth; d++) {
+              var dayEl = document.createElement('div');
+              dayEl.className = 'ag-cal-day';
+              dayEl.textContent = d;
+              var dateObj = new Date(year, month, d);
+              if (dateObj < today) { dayEl.classList.add('ag-day-disabled'); }
+              else if (dateObj.getTime() === today.getTime()) { dayEl.classList.add('ag-day-today'); }
+              if (dateObj.getDay() === 0) { dayEl.classList.add('ag-day-disabled'); }
+              dayEl.addEventListener('click', function (currDay, currDate) {
+                return function () {
+                  if (this.classList.contains('ag-day-disabled')) return;
+                  document.querySelectorAll('.ag-cal-day').forEach(function (el) { el.classList.remove('ag-day-selected'); });
+                  this.classList.add('ag-day-selected');
+                  state.data = currDate;
+                  state.hora = null;
+                  document.querySelectorAll('.ag-hora').forEach(function (el) { el.classList.remove('ag-hora-selected'); });
+                  refreshHorarios(currDate);
+                  checkStep2Ready();
+                };
+              }(d, formatDateBR(dateObj)));
+              grid.appendChild(dayEl);
+            }
+          }
+
+          function formatDateBR(date) {
+            var d = date.getDate(); var mo = date.getMonth() + 1; var y = date.getFullYear();
+            return (d < 10 ? '0' + d : d) + '/' + (mo < 10 ? '0' + mo : mo) + '/' + y;
+          }
+
+          function initHorarios() {
+            var tabs = document.querySelectorAll('.ag-tab');
+            tabs.forEach(function (tab) {
+              tab.addEventListener('click', function () {
+                tabs.forEach(function (t) { t.classList.remove('ag-tab-active'); });
+                tab.classList.add('ag-tab-active');
+                activePeriodo = tab.dataset.periodo;
+                document.getElementById('ag-horarios-manha').style.display = activePeriodo === 'manha' ? '' : 'none';
+                document.getElementById('ag-horarios-tarde').style.display = activePeriodo === 'tarde' ? '' : 'none';
+              });
+            });
+            document.querySelectorAll('.ag-hora').forEach(function (hora) {
+              hora.addEventListener('click', function () {
+                if (this.classList.contains('ag-hora-unavail')) return;
+                document.querySelectorAll('.ag-hora').forEach(function (el) { el.classList.remove('ag-hora-selected'); });
+                this.classList.add('ag-hora-selected');
+                state.hora = this.dataset.hora;
+                checkStep2Ready();
+              });
+            });
+          }
+
+          function checkStep2Ready() {
+            var btn = document.getElementById('ag-s2-next');
+            btn.disabled = !(state.data && state.hora);
+          }
+
+          function refreshHorarios(date) {
+            var loading = document.getElementById('ag-horarios-loading');
+            if (loading) loading.style.display = 'flex';
+            var key = date.split('/').join('-');
+            db.ref('agendamentos/' + key).once('value', function (snap) {
+              var booked = snap.val() || {};
+              document.querySelectorAll('.ag-hora').forEach(function (hora) {
+                hora.classList.remove('ag-hora-unavail');
+                if (booked[hora.dataset.hora] || isHourPast(hora.dataset.hora)) {
+                  hora.classList.add('ag-hora-unavail');
+                }
+              });
+              if (loading) loading.style.display = 'none';
+            });
+          }
+
+          function saveBooking(date, hour) {
+            var key = date.split('/').join('-');
+            var update = {};
+            update[hour] = true;
+            return db.ref('agendamentos/' + key).update(update);
+          }
+
+          function initStep3() {
+            var nome = document.getElementById('ag-nome');
+            var whatsapp = document.getElementById('ag-whatsapp');
+            nome.addEventListener('input', function () {
+              state.nome = nome.value.trim();
+              nome.classList.remove('ag-input-error');
+              if (state.nome) nome.classList.add('ag-input-ok');
+              else nome.classList.remove('ag-input-ok');
+            });
+            whatsapp.addEventListener('input', function () {
+              state.whatsapp = whatsapp.value.trim();
+              whatsapp.classList.remove('ag-input-error');
+              if (state.whatsapp) whatsapp.classList.add('ag-input-ok');
+              else whatsapp.classList.remove('ag-input-ok');
+            });
+            document.getElementById('ag-obs').addEventListener('input', function () {
+              state.obs = this.value.trim();
+            });
+          }
+
+          function updateStep3() {
+            var t = calcTotals();
+            document.getElementById('ag-resumo-servico').textContent = t.nomes.join(' + ') || '\u2014';
+            document.getElementById('ag-resumo-data').textContent = state.data || '\u2014';
+            document.getElementById('ag-resumo-hora').textContent = state.hora || '\u2014';
+            document.getElementById('ag-resumo-total').textContent = t.total > 0 ? 'R$ ' + t.total : '\u2014';
+          }
+
+          function isValidWhatsApp(val) {
+            var digits = val.replace(/\D/g, '');
+            return digits.length >= 10 && digits.length <= 13;
+          }
+
+          function isHourPast(hora) {
+            if (!state.data) return false;
+            var today = new Date();
+            if (state.data !== formatDateBR(today)) return false;
+            var parts = hora.split(':');
+            var nowH = today.getHours();
+            var nowM = today.getMinutes();
+            return +parts[0] < nowH || (+parts[0] === nowH && +parts[1] <= nowM);
+          }
+
+          function validateStep3() {
+            var valid = true;
+            var nome = document.getElementById('ag-nome');
+            var whatsapp = document.getElementById('ag-whatsapp');
+            if (!state.nome) {
+              nome.classList.add('ag-input-error');
+              nome.nextElementSibling.textContent = 'Campo obrigat\xf3rio';
+              valid = false;
+            }
+            if (!state.whatsapp) {
+              whatsapp.classList.add('ag-input-error');
+              whatsapp.nextElementSibling.textContent = 'Campo obrigat\xf3rio';
+              valid = false;
+            } else if (!isValidWhatsApp(state.whatsapp)) {
+              whatsapp.classList.add('ag-input-error');
+              whatsapp.nextElementSibling.textContent = 'N\xfamero inv\xe1lido';
+              valid = false;
+            }
+            return valid;
+          }
+
+          function showToast(msg, tipo) {
+            var toast = document.getElementById('ag-toast');
+            toast.textContent = msg;
+            toast.className = 'ag-toast ag-toast-' + tipo + ' ag-toast-show';
+            setTimeout(function () {
+              toast.classList.remove('ag-toast-show');
+            }, 3500);
+          }
+
+          function checkRateLimit() {
+            var RL_KEY = 'ld_ag_rl';
+            var LIMIT = 3;
+            var WINDOW_MS = 24 * 60 * 60 * 1000; // 24h
+            try {
+              var raw = localStorage.getItem(RL_KEY);
+              var record = raw ? JSON.parse(raw) : { count: 0, since: Date.now() };
+              if (Date.now() - record.since > WINDOW_MS) {
+                record = { count: 0, since: Date.now() };
+              }
+              if (record.count >= LIMIT) {
+                showToast('Limite de agendamentos atingido. Tente novamente amanhã.', 'erro');
+                return false;
+              }
+              record.count++;
+              localStorage.setItem(RL_KEY, JSON.stringify(record));
+            } catch (e) { /* localStorage indisponível — deixa passar */ }
+            return true;
+          }
+
+          function sendToWhatsApp() {
+            if (!validateStep3()) return;
+            if (!checkRateLimit()) return;
+            var nome = document.getElementById('ag-nome').value.trim();
+            var whatsapp = document.getElementById('ag-whatsapp').value.trim();
+            var obs = document.getElementById('ag-obs').value.trim();
+            var t = calcTotals();
+            var enc = encodeURIComponent;
+            var msg = enc('Olá Leonardo! Gostaria de agendar:\n\n') +
+              enc('*Serviço:* ' + t.nomes.join(' + ') + '\n') +
+              enc('*Data:* ' + state.data + '\n') +
+              enc('*Horário:* ' + state.hora + '\n') +
+              enc('*Nome:* ' + nome + '\n') +
+              enc('*WhatsApp:* ' + whatsapp + '\n') +
+              enc('*Total:* R$ ' + t.total) +
+              (obs ? enc('\n*Observações:* ' + obs) : '');
+
+            var btn = document.getElementById('ag-s3-next');
+            btn.disabled = true;
+            btn.innerHTML = 'Salvando\u2026';
+
+            var numero = '559840000000';
+            var waKey = whatsapp.replace(/\D/g, '');
+            var bookingData = {
+              nome: nome,
+              whatsapp: whatsapp,
+              servicos: t.nomes.join(' + '),
+              data: state.data,
+              hora: state.hora,
+              total: t.total,
+              obs: obs || '',
+              timestamp: Date.now()
+            };
+
+            saveBooking(state.data, state.hora)
+              .then(function () {
+                db.ref('agendamentos-completos').push(bookingData);
+                showToast('Hor\xe1rio reservado com sucesso!', 'sucesso');
+                window.open('https://wa.me/' + numero + '?text=' + msg, '_blank');
+                state.nome = nome; state.whatsapp = whatsapp; state.obs = obs;
+                showStep(4);
+              })
+              .catch(function () {
+                showToast('Erro ao salvar. Tente novamente.', 'erro');
+                btn.disabled = false;
+                btn.innerHTML = 'Confirmar agendamento <span>&#8594;</span>';
+              });
+          }
+
+          function updateStep4() {
+            var t = calcTotals();
+            document.getElementById('ag-conf-servico').textContent = t.nomes.join(' + ') || '\u2014';
+            document.getElementById('ag-conf-data').textContent = state.data || '\u2014';
+            document.getElementById('ag-conf-hora').textContent = state.hora || '\u2014';
+            document.getElementById('ag-conf-nome').textContent = state.nome || '\u2014';
+            document.getElementById('ag-conf-total').textContent = t.total > 0 ? 'R$ ' + t.total : '\u2014';
+          }
+
+          function resetBooking() {
+            state = { servicos: [], data: null, hora: null, nome: null, whatsapp: null, obs: null };
+            document.querySelectorAll('.ag-servico-card').forEach(function (c) { c.classList.remove('ag-selected'); });
+            document.querySelectorAll('.servico-item').forEach(function (i) { i.classList.remove('selecionado'); });
+            var totalEl = document.getElementById('ag-s1-total');
+            if (totalEl) totalEl.classList.remove('visible');
+            document.querySelectorAll('.ag-cal-day').forEach(function (d) { d.classList.remove('ag-day-selected'); });
+            document.querySelectorAll('.ag-hora').forEach(function (h) { h.classList.remove('ag-hora-selected'); });
+            document.getElementById('ag-nome').value = '';
+            document.getElementById('ag-whatsapp').value = '';
+            document.getElementById('ag-obs').value = '';
+            document.querySelectorAll('.ag-form-input').forEach(function (i) { i.classList.remove('ag-input-error', 'ag-input-ok'); });
+            document.querySelectorAll('.ag-form-error').forEach(function (e) { e.textContent = ''; });
+            document.getElementById('ag-s1-next').disabled = true;
+            document.getElementById('ag-s2-next').disabled = true;
+            showStep(1);
+          }
+
+          document.addEventListener('DOMContentLoaded', init);
+        })();
+      </script>
+    </section>
+
+  </main>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">
+    <svg viewBox="0 0 24 24">
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
+  </button>
+
+  <a class="whatsapp-float" id="whatsapp-float" href="https://wa.me/559840000000" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <footer>
+    <div class="footer-logo">Leonardo David <span>| Visagista</span></div>
+    <div class="footer-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Servi&#231;os</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#agendar">Agendar</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/leonardodavidvisagista/" target="_blank" rel="noopener noreferrer"
+        class="social-icon" title="Instagram" aria-label="Instagram de Leonardo David">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+      </a>
+      <a href="https://wa.me/559840000000" target="_blank" rel="noopener noreferrer" class="social-icon"
+        title="WhatsApp" aria-label="WhatsApp de Leonardo David">
+        <svg viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      </a>
+    </div>
+    <div class="footer-copy">&#169; <span id="footer-year"></span> Leonardo David Visagista</div>
+    <div class="footer-cidade">Caxias-MA</div>
+  </footer>
+
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+  <script src="script.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "name": "Leonardo David Visagista",
+    "description": "Visagista profissional especializado em corte masculino com análise facial e consultoria de imagem personalizada.",
+    "url": "https://leonardodavid.com.br",
+    "image": "https://leonardodavid.com.br/photos/hero.jpg",
+    "telephone": "+55-98-40000000",
+    "priceRange": "R$75 - R$220",
+    "currenciesAccepted": "BRL",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Caxias",
+      "addressRegion": "MA",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-4.8614",
+      "longitude": "-43.3559"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "17:00"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Serviços",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Corte com Leonardo" },
+          "price": "150",
+          "priceCurrency": "BRL"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Desondulação" },
+          "price": "150",
+          "priceCurrency": "BRL"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Corte com Visagismo" },
+          "price": "220",
+          "priceCurrency": "BRL"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Aparar Barba" },
+          "price": "75",
+          "priceCurrency": "BRL"
+        }
+      ]
+    },
+    "sameAs": [
+      "https://www.instagram.com/leonardodavidvisagista/"
+    ]
+  }
+  </script>
+</body>
+
+</html>

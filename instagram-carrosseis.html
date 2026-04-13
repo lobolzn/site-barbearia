@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrosséis Instagram — Leonardo David Visagista</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c9a96e;
+      --gold-light: #e2c98a;
+      --gold-dim: rgba(201, 169, 110, 0.25);
+      --dark: #0c0c0c;
+      --dark-2: #141414;
+      --dark-3: #1c1c1c;
+      --text: #f0ebe0;
+      --text-dim: #9a9080;
+      --slide-size: 540px;
+    }
+
+    body {
+      background: #080808;
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      min-height: 100vh;
+      padding: 0;
+    }
+
+    /* ── HEADER ── */
+    header {
+      padding: 28px 40px 24px;
+      border-bottom: 1px solid rgba(201,169,110,0.15);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .header-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--gold);
+    }
+    .header-logo span { color: var(--text-dim); font-weight: 300; font-size: 14px; margin-left: 8px; letter-spacing: 0.12em; text-transform: uppercase; }
+
+    /* ── TABS ── */
+    .tabs {
+      display: flex;
+      gap: 0;
+      padding: 24px 40px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .tab {
+      padding: 10px 22px 14px;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .tab:hover { color: var(--text); }
+    .tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+    /* ── WORKSPACE ── */
+    .workspace {
+      display: none;
+      padding: 40px;
+      gap: 40px;
+      align-items: flex-start;
+    }
+    .workspace.active {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    /* ── SLIDE PREVIEW AREA ── */
+    .preview-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      flex: 0 0 auto;
+    }
+
+    .slide-counter {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--text-dim);
+      text-transform: uppercase;
+    }
+
+    .slide-wrapper {
+      position: relative;
+      width: var(--slide-size);
+      height: var(--slide-size);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(201,169,110,0.1);
+    }
+
+    .slide-nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .nav-btn {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,169,110,0.3);
+      background: rgba(201,169,110,0.05);
+      color: var(--gold);
+      font-size: 16px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s;
+    }
+    .nav-btn:hover { background: rgba(201,169,110,0.12); border-color: var(--gold); }
+    .nav-btn:disabled { opacity: 0.2; cursor: not-allowed; }
+
+    .dots {
+      display: flex;
+      gap: 6px;
+    }
+    .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: rgba(201,169,110,0.25);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .dot.active { background: var(--gold); width: 20px; border-radius: 3px; }
+
+    /* ── DOWNLOAD BTN ── */
+    .download-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 28px;
+      background: var(--gold);
+      color: #0c0c0c;
+      border: none;
+      border-radius: 2px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s;
+      width: 100%;
+      justify-content: center;
+    }
+    .download-btn:hover { background: var(--gold-light); }
+    .download-btn:active { transform: scale(0.98); }
+    .download-btn.loading { opacity: 0.6; cursor: wait; }
+
+    .download-all-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 28px;
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid rgba(201,169,110,0.4);
+      border-radius: 2px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s;
+      width: 100%;
+      justify-content: center;
+    }
+    .download-all-btn:hover { border-color: var(--gold); background: rgba(201,169,110,0.06); }
+
+    /* ── SIDE INFO ── */
+    .side-info {
+      flex: 1;
+      min-width: 300px;
+      max-width: 420px;
+    }
+
+    .info-card {
+      background: var(--dark-2);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 4px;
+      padding: 28px;
+      margin-bottom: 16px;
+    }
+    .info-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .info-text {
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--text-dim);
+      white-space: pre-wrap;
+      font-family: 'Outfit', sans-serif;
+    }
+    .copy-btn {
+      margin-top: 14px;
+      padding: 8px 16px;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text-dim);
+      border-radius: 2px;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: 'Outfit', sans-serif;
+      transition: all 0.2s;
+    }
+    .copy-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .copy-btn.copied { color: #6fcf6f; border-color: #6fcf6f; }
+
+    /* ════════════════════════════════
+       SLIDE DESIGNS
+    ════════════════════════════════ */
+
+    .slide {
+      display: none;
+      width: 540px;
+      height: 540px;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide.active { display: flex; }
+
+    /* ── SHARED ELEMENTS ── */
+    .s-brand {
+      position: absolute;
+      bottom: 28px;
+      left: 32px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(201,169,110,0.6);
+    }
+    .s-at {
+      position: absolute;
+      bottom: 28px;
+      right: 32px;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: rgba(201,169,110,0.45);
+    }
+    .s-line-h {
+      position: absolute;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    }
+    .s-line-v {
+      position: absolute;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, var(--gold-dim), transparent);
+    }
+    .s-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 80px;
+      font-weight: 300;
+      color: rgba(201,169,110,0.06);
+      line-height: 1;
+      position: absolute;
+    }
+    .s-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border: 1px solid rgba(201,169,110,0.3);
+      border-radius: 1px;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .s-tag::before { content: ''; display: block; width: 16px; height: 1px; background: var(--gold); }
+
+    /* ════════════ CARROSSEL 1 — SERVIÇOS ════════════ */
+
+    /* Slide C1-1 CAPA */
+    .c1s1 {
+      background: var(--dark);
+      flex-direction: column;
+      justify-content: center;
+      padding: 52px;
+    }
+    .c1s1 .bg-lines {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(201,169,110,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,169,110,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .c1s1 .corner {
+      position: absolute;
+      width: 40px; height: 40px;
+      border-color: rgba(201,169,110,0.3);
+      border-style: solid;
+    }
+    .c1s1 .corner.tl { top: 28px; left: 28px; border-width: 1px 0 0 1px; }
+    .c1s1 .corner.tr { top: 28px; right: 28px; border-width: 1px 1px 0 0; }
+    .c1s1 .corner.bl { bottom: 48px; left: 28px; border-width: 0 0 1px 1px; }
+    .c1s1 .corner.br { bottom: 48px; right: 28px; border-width: 0 1px 1px 0; }
+    .c1s1 .eyebrow {
+      font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 24px; position: relative;
+    }
+    .c1s1 h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px; font-weight: 300; line-height: 1.1;
+      color: var(--text); margin-bottom: 20px; position: relative;
+    }
+    .c1s1 h1 em { font-style: italic; color: var(--gold); }
+    .c1s1 .sub {
+      font-size: 13px; font-weight: 300; color: var(--text-dim);
+      letter-spacing: 0.05em; position: relative;
+    }
+    .c1s1 .swipe {
+      position: absolute; bottom: 70px; right: 52px;
+      font-size: 10px; letter-spacing: 0.15em; color: rgba(201,169,110,0.5);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .c1s1 .swipe::after { content: '→'; font-size: 14px; color: var(--gold); }
+
+    /* Slide C1-2,3,4,5 — cada serviço */
+    .c1-srv {
+      background: var(--dark);
+      flex-direction: column;
+      justify-content: center;
+      padding: 52px;
+    }
+    .c1-srv .srv-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 120px; font-weight: 300;
+      color: rgba(201,169,110,0.06);
+      position: absolute; top: -10px; right: 30px; line-height: 1;
+    }
+    .c1-srv .srv-index {
+      font-size: 10px; letter-spacing: 0.2em; color: var(--gold);
+      margin-bottom: 28px; position: relative;
+    }
+    .c1-srv h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px; font-weight: 400; line-height: 1.15;
+      color: var(--text); margin-bottom: 16px; position: relative;
+    }
+    .c1-srv .desc {
+      font-size: 13px; font-weight: 300; line-height: 1.7;
+      color: var(--text-dim); max-width: 320px; position: relative;
+      margin-bottom: 32px;
+    }
+    .c1-srv .price-row {
+      display: flex; align-items: baseline; gap: 20px; position: relative;
+    }
+    .c1-srv .price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px; font-weight: 300; color: var(--gold);
+    }
+    .c1-srv .dur {
+      font-size: 12px; letter-spacing: 0.1em; color: var(--text-dim);
+    }
+    .c1-srv .badge {
+      display: inline-block; padding: 4px 10px;
+      background: rgba(201,169,110,0.12); border: 1px solid rgba(201,169,110,0.3);
+      border-radius: 1px; font-size: 9px; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+      position: relative;
+    }
+    .c1-srv .gold-line {
+      position: absolute; bottom: 46px; left: 0; right: 0;
+      height: 1px; background: linear-gradient(90deg, var(--gold-dim), transparent);
+    }
+
+    /* Slide C1 FINAL */
+    .c1-cta {
+      background: var(--dark);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 52px;
+    }
+    .c1-cta .bg-gold {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, rgba(201,169,110,0.06) 0%, transparent 70%);
+    }
+    .c1-cta h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 44px; font-weight: 300; line-height: 1.2;
+      color: var(--text); margin-bottom: 8px; position: relative;
+    }
+    .c1-cta h2 em { font-style: italic; color: var(--gold); }
+    .c1-cta .divider {
+      width: 40px; height: 1px; background: var(--gold);
+      margin: 24px auto; position: relative;
+    }
+    .c1-cta .cta-text {
+      font-size: 13px; color: var(--text-dim); margin-bottom: 28px; position: relative;
+    }
+    .c1-cta .cta-btn {
+      padding: 14px 36px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+      position: relative; margin-bottom: 24px;
+    }
+    .c1-cta .details {
+      font-size: 11px; color: rgba(201,169,110,0.45); letter-spacing: 0.08em; position: relative;
+      line-height: 1.8;
+    }
+
+    /* ════════════ CARROSSEL 2 — VISAGISMO ════════════ */
+
+    .c2-base {
+      background: #0e0c0a;
+      flex-direction: column;
+      justify-content: center;
+      padding: 52px;
+    }
+
+    /* Capa C2 */
+    .c2s1 h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px; font-weight: 300; line-height: 1.15;
+      color: var(--text); margin-bottom: 20px; position: relative;
+    }
+    .c2s1 h1 em { font-style: italic; color: var(--gold); }
+    .c2s1 .hook {
+      font-size: 14px; font-weight: 300; line-height: 1.7;
+      color: var(--text-dim); max-width: 340px; position: relative;
+    }
+    .c2s1 .big-q {
+      position: absolute; top: 20px; right: 30px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 200px; color: rgba(201,169,110,0.04);
+      line-height: 1; font-weight: 300;
+    }
+
+    /* Slides def, sem/com */
+    .c2-body .eyebrow {
+      font-size: 10px; letter-spacing: 0.2em; color: var(--gold);
+      text-transform: uppercase; margin-bottom: 20px; position: relative;
+    }
+    .c2-body h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px; font-weight: 400; line-height: 1.2;
+      color: var(--text); margin-bottom: 20px; position: relative;
+    }
+    .c2-body h2 em { font-style: italic; color: var(--gold); }
+    .c2-list { list-style: none; position: relative; }
+    .c2-list li {
+      font-size: 14px; font-weight: 300; line-height: 1;
+      color: var(--text-dim); padding: 13px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      display: flex; align-items: center; gap: 14px;
+    }
+    .c2-list li:last-child { border-bottom: none; }
+    .c2-list .icon { font-size: 15px; flex-shrink: 0; }
+    .c2-list .bad { color: #c97070; }
+    .c2-list .good { color: #70c996; }
+
+    /* Slide quote */
+    .c2-quote {
+      background: #0e0c0a;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 64px 56px;
+    }
+    .c2-quote blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px; font-style: italic; font-weight: 300;
+      line-height: 1.5; color: var(--text); position: relative;
+    }
+    .c2-quote blockquote::before {
+      content: '"'; font-size: 80px; color: rgba(201,169,110,0.15);
+      position: absolute; top: -30px; left: -20px; line-height: 1;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .c2-quote .q-line { width: 40px; height: 1px; background: var(--gold); margin: 28px auto; }
+    .c2-quote .q-author { font-size: 11px; letter-spacing: 0.2em; color: var(--gold); }
+
+    /* ════════════ CARROSSEL 3 — PROMOÇÃO ════════════ */
+
+    .c3-base {
+      background: #0a0906;
+      flex-direction: column;
+      justify-content: center;
+      padding: 52px;
+    }
+
+    /* Capa C3 */
+    .c3s1 .bg-sweep {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(201,169,110,0.08) 0%, transparent 60%);
+    }
+    .c3s1 .label {
+      font-size: 10px; letter-spacing: 0.25em; color: var(--gold);
+      text-transform: uppercase; margin-bottom: 20px; position: relative;
+    }
+    .c3s1 h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 50px; font-weight: 300; line-height: 1.1;
+      color: var(--text); margin-bottom: 24px; position: relative;
+    }
+    .c3s1 h1 em { font-style: italic; color: var(--gold); }
+    .c3s1 .hook { font-size: 13px; color: var(--text-dim); position: relative; }
+    .c3s1 .big-price {
+      position: absolute; bottom: 60px; right: 40px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 100px; font-weight: 200;
+      color: rgba(201,169,110,0.07); line-height: 1;
+    }
+
+    .c3-features .feat-label {
+      font-size: 10px; letter-spacing: 0.2em; color: var(--gold);
+      text-transform: uppercase; margin-bottom: 24px; position: relative;
+    }
+    .c3-features h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px; font-weight: 400;
+      color: var(--text); margin-bottom: 28px; position: relative;
+    }
+    .feat-list { list-style: none; position: relative; }
+    .feat-list li {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 13px 0; border-bottom: 1px solid rgba(201,169,110,0.08);
+      font-size: 14px; font-weight: 300; color: var(--text-dim); line-height: 1.4;
+    }
+    .feat-list li:last-child { border-bottom: none; }
+    .feat-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--gold);
+      flex-shrink: 0; margin-top: 6px;
+    }
+
+    .c3-steps .step-label {
+      font-size: 10px; letter-spacing: 0.2em; color: var(--gold);
+      text-transform: uppercase; margin-bottom: 28px; position: relative;
+    }
+    .c3-steps h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px; font-weight: 400;
+      color: var(--text); margin-bottom: 32px; position: relative;
+    }
+    .step-items { position: relative; }
+    .step-item {
+      display: flex; gap: 20px; margin-bottom: 20px;
+      align-items: flex-start;
+    }
+    .step-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px; font-weight: 300; color: var(--gold);
+      line-height: 1; flex-shrink: 0; width: 28px;
+    }
+    .step-content .step-title {
+      font-size: 14px; font-weight: 400; color: var(--text); margin-bottom: 4px;
+    }
+    .step-content .step-desc {
+      font-size: 12px; font-weight: 300; color: var(--text-dim); line-height: 1.5;
+    }
+
+    .c3-result {
+      background: #0a0906;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 52px;
+      flex-direction: column;
+    }
+    .c3-result .bg-sweep {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center bottom, rgba(201,169,110,0.08) 0%, transparent 65%);
+    }
+    .c3-result .result-label {
+      font-size: 10px; letter-spacing: 0.2em; color: var(--gold);
+      text-transform: uppercase; margin-bottom: 20px; position: relative;
+    }
+    .c3-result blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px; font-style: italic; font-weight: 300;
+      line-height: 1.4; color: var(--text); position: relative;
+      margin-bottom: 32px;
+    }
+    .c3-result blockquote em { color: var(--gold); }
+
+    /* C3 PRICE slide */
+    .c3-price-slide {
+      background: #0a0906;
+      flex-direction: column;
+      justify-content: center;
+      padding: 52px;
+    }
+    .c3-price-slide .pr-label {
+      font-size: 10px; letter-spacing: 0.2em; color: var(--gold);
+      text-transform: uppercase; margin-bottom: 20px; position: relative;
+    }
+    .c3-price-slide .pr-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px; font-weight: 400; color: var(--text);
+      margin-bottom: 32px; position: relative;
+    }
+    .c3-price-slide .pr-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 80px; font-weight: 200; color: var(--gold);
+      line-height: 1; position: relative; margin-bottom: 12px;
+    }
+    .c3-price-slide .pr-dur {
+      font-size: 13px; color: var(--text-dim); position: relative; margin-bottom: 28px;
+    }
+    .c3-price-slide .pr-avail {
+      font-size: 12px; letter-spacing: 0.08em; color: rgba(201,169,110,0.5);
+      position: relative;
+    }
+
+    /* C3 CTA FINAL */
+    .c3-cta {
+      background: #0a0906;
+      flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 52px;
+    }
+    .c3-cta .bg-lines {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(201,169,110,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,169,110,0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    .c3-cta .urgency {
+      font-size: 10px; letter-spacing: 0.2em; color: var(--gold);
+      text-transform: uppercase; margin-bottom: 20px; position: relative;
+    }
+    .c3-cta h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px; font-weight: 300; line-height: 1.2;
+      color: var(--text); margin-bottom: 24px; position: relative;
+    }
+    .c3-cta h2 em { font-style: italic; color: var(--gold); }
+    .c3-cta .cta-sub {
+      font-size: 13px; color: var(--text-dim); margin-bottom: 32px; position: relative;
+    }
+    .c3-cta .cta-box {
+      border: 1px solid rgba(201,169,110,0.3); padding: 20px 36px;
+      position: relative; margin-bottom: 20px;
+    }
+    .c3-cta .cta-site {
+      font-size: 13px; color: var(--gold); letter-spacing: 0.08em;
+    }
+    .c3-cta .cta-detail {
+      font-size: 11px; color: var(--text-dim); margin-top: 6px; letter-spacing: 0.05em;
+    }
+    .c3-cta .horario {
+      font-size: 11px; color: rgba(201,169,110,0.4); letter-spacing: 0.08em; position: relative;
+    }
+
+    /* ── STATUS MSG ── */
+    .status-msg {
+      position: fixed; top: 20px; right: 20px;
+      background: var(--dark-2); border: 1px solid var(--gold-dim);
+      padding: 12px 20px; border-radius: 2px;
+      font-size: 12px; color: var(--gold);
+      letter-spacing: 0.08em; opacity: 0;
+      transition: opacity 0.3s; pointer-events: none;
+      z-index: 9999;
+    }
+    .status-msg.show { opacity: 1; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-logo">Leonardo David <span>— Criador de Carrosséis Instagram</span></div>
+</header>
+
+<div class="tabs">
+  <div class="tab active" onclick="switchTab(0)">01 · Serviços</div>
+  <div class="tab" onclick="switchTab(1)">02 · O que é Visagismo</div>
+  <div class="tab" onclick="switchTab(2)">03 · Corte com Visagismo</div>
+</div>
+
+<!-- ═══════════════ CARROSSEL 1 — SERVIÇOS ═══════════════ -->
+<div class="workspace active" id="ws-0">
+  <div class="preview-area">
+    <div class="slide-counter" id="counter-0">Slide 1 de 6</div>
+    <div class="slide-wrapper" id="slidebox-0">
+
+      <!-- SLIDE 1 — CAPA -->
+      <div class="slide c1s1 active" id="c1s1">
+        <div class="bg-lines"></div>
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+        <div class="eyebrow">Leonardo David · Visagista</div>
+        <h1>Você sabia que<br>o corte certo<br><em>muda tudo?</em></h1>
+        <div class="sub">Arraste e descubra os serviços →</div>
+        <div class="s-brand">leonardodavid.com.br</div>
+        <div class="s-at">@leonardodavidvisagista</div>
+      </div>
+
+      <!-- SLIDE 2 — Corte com Leonardo -->
+      <div class="slide c1-srv" id="c1s2">
+        <div class="srv-num">01</div>
+        <div class="srv-index">Serviço 01 · 04</div>
+        <h2>Corte com<br>Leonardo</h2>
+        <div class="desc">Corte personalizado com análise de visagismo e estilo individual.</div>
+        <div class="price-row">
+          <span class="price">R$ 150</span>
+          <span class="dur">1 hora</span>
+        </div>
+        <div class="gold-line"></div>
+        <div class="s-brand">leonardodavid.com.br</div>
+        <div class="s-at">@leonardodavidvisagista</div>
+      </div>
+
+      <!-- SLIDE 3 — Desondulação -->
+      <div class="slide c1-srv" id="c1s3">
+        <div class="srv-num">02</div>
+        <div class="srv-index">Serviço 02 · 04</div>
+        <h2>Desondulação</h2>
+        <div class="desc">Tratamento profissional para alisar e disciplinar os fios com durabilidade.</div>
+        <div class="price-row">
+          <span class="price">R$ 150</span>
+          <span class="dur">1h 30min</span>
+        </div>
+        <div class="gold-line"></div>
+        <div class="s-brand">leonardodavid.com.br</div>
+        <div class="s-at">@leonardodavidvisagista</div>
+      </div>
+
+      <!-- SLIDE 4 — Corte com Visagismo -->
+      <div class="slide c1-srv" id="c1s4">
+        <div class="srv-num">03</div>
+        <div class="srv-index">Serviço 03 · 04</div>
+        <div class="badge">Mais procurado</div>
+        <h2>Corte com<br>Visagismo</h2>
+        <div class="desc">Consultoria de imagem, análise facial e corte sob medida para cada cliente.</div>
+        <div class="price-row">
+          <span class="price">R$ 220</span>
+          <span class="dur">1 hora</span>
+        </div>
+        <div class="gold-line"></div>
+        <div class="s-brand">leonardodavid.com.br</div>
+        <div class="s-at">@leonardodavidvisagista</div>
+      </div>
+
+      <!-- SLIDE 5 — Aparar Barba -->
+      <div class="slide c1-srv" id="c1s5">
+        <div class="srv-num">04</div>
+        <div class="srv-index">Serviço 04 · 04</div>
+        <h2>Aparar<br>Barba</h2>
+        <div class="desc">Modelagem e aparo preciso para uma barba impecável.</div>
+        <div class="price-row">
+          <span class="price">R$ 75</span>
+          <span class="dur">20 minutos</span>
+        </div>
+        <div class="gold-line"></div>
+        <div class="s-brand">leonardodavid.com.br</div>
+        <div class="s-at">@leonardodavidvisagista</div>
+      </div>
+
+      <!-- SLIDE 6 — CTA -->
+      <div class="slide c1-cta" id="c1s6">
+        <div class="bg-gold"></div>
+        <div class="s-tag">Agende agora</div>
+        <h2 style="margin-top:20px;">Mais do que<br>um corte.<br><em>Uma transformação.</em></h2>
+        <div class="divider"></div>
+        <div class="cta-text">Atendimento personalizado em Caxias – MA</div>
+        <div class="cta-btn">leonardodavid.com.br</div>
+        <div class="details">Seg – Sex  9h às 19h  ·  Sáb  9h às 17h</div>
+      </div>
+
+    </div><!-- /slide-wrapper -->
+
+    <div class="slide-nav">
+      <button class="nav-btn" id="prev-0" onclick="changeSlide(0,-1)" disabled>‹</button>
+      <div class="dots" id="dots-0">
+        <div class="dot active" onclick="goSlide(0,0)"></div>
+        <div class="dot" onclick="goSlide(0,1)"></div>
+        <div class="dot" onclick="goSlide(0,2)"></div>
+        <div class="dot" onclick="goSlide(0,3)"></div>
+        <div class="dot" onclick="goSlide(0,4)"></div>
+        <div class="dot" onclick="goSlide(0,5)"></div>
+      </div>
+      <button class="nav-btn" id="next-0" onclick="changeSlide(0,1)">›</button>
+    </div>
+
+    <button class="download-btn" onclick="downloadSlide(0)">⬇ Baixar Slide em Alta Resolução (1080×1080)</button>
+    <button class="download-all-btn" onclick="downloadAll(0)">⬇ Baixar Todos os Slides</button>
+  </div>
+
+  <!-- Side info -->
+  <div class="side-info">
+    <div class="info-card">
+      <div class="info-label">Legenda — Carrossel 1</div>
+      <div class="info-text" id="caption-0">Seu estilo começa com o corte certo. ✂️
+
+Aqui você não sai apenas com o cabelo cortado — sai com uma identidade.
+
+Cada atendimento começa com uma análise do seu rosto, estilo e personalidade.
+
+👇 Arraste para ver todos os serviços e agende pelo link na bio.
+
+📍 Caxias – MA
+🕐 Seg a Sex: 9h às 19h | Sábado: 9h às 17h
+
+#visagismo #visagistamasculino #cortecabelo #barbearia #caxiasma #maranhao #cabelomasculino #cortemasculino #desondulacao #transformacao #leonardodavidvisagista</div>
+      <button class="copy-btn" onclick="copyCaption(0)">Copiar legenda</button>
+    </div>
+    <div class="info-card">
+      <div class="info-label">Dicas de uso</div>
+      <div class="info-text" style="font-size:12px;">• Poste entre 18h–20h (maior engajamento)
+• Primeiro slide decide se vão arrastar — capriche na foto de capa
+• Adicione à legenda: "salva esse post" para aumentar alcance
+• Responda todos os comentários nas primeiras 2h</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ CARROSSEL 2 — VISAGISMO ═══════════════ -->
+<div class="workspace" id="ws-1">
+  <div class="preview-area">
+    <div class="slide-counter" id="counter-1">Slide 1 de 6</div>
+    <div class="slide-wrapper" id="slidebox-1">
+
+      <!-- SLIDE 1 — CAPA -->
+      <div class="slide c2-base c2s1 active" id="c2s1">
+        <div class="big-q">"</div>
+        <div class="s-tag" style="margin-bottom:28px;">Você sabia?</div>
+        <h1>Visagismo:<br>o que é e por<br>que <em>muda tudo</em></h1>
+        <div class="hook">A maioria dos homens nunca teve um corte feito para o SEU rosto.</div>
+        <div class="s-brand">leonardodavid.com.br</div>
+        <div class="s-at">@leonardodavidvisagista</div>
+      </div>
+
+      <!-- SLIDE 2 — Definição -->
+      <div class="slide c2-base c2-body" id="c2s2">
+        <div class="eyebrow">O que é visagismo</div>
+        <h2>A arte de harmonizar<br>o corte com o <em>rosto.</em></h2>
+        <div class="c2-list" style="margin-top:8px;">
+          <li style="border-top:1px solid rgba(255,255,255,0.05);">
+            <span>Cada pessoa tem um formato de rosto único.</span>
+          </li>
+          <li><span>O corte ideal <strong style="color:var(--text);">valoriza seus traços</strong> e esconde os que incomodam.</span></li>
+          <li><span>É técnica + sensibilidade artística + personalidade.</span></li>
+        </div>
+        <div class="s-brand">leonardodavid.com.br</div>
+        <div class="s-at">@leonardodavidvisagista</div>
+      </div>
+
+      <!-- SLIDE 3 — SEM visagismo -->
+      <div class="slide c2-base c2-body" id="c2s3">
+        <div class="eyebrow">Sem visagismo</div>
+        <h2>O que você<br><em>perde.</em></h2>
+        <ul class="c2-list">
+          <li><span class="icon bad">✗</span><span>Corte que não combina com o formato do rosto</span></li>
+          <li><span class="icon bad">✗</span><span>Estilo genérico, sem identidade</span></li>
+          <li><span class="icon bad">✗</span><span>Resultado que envelheceu ou desvalorizou</span></li>
+          <li><span class="icon bad">✗</span><span>Saiu da barbearia sem saber direito o que pediu</span></li>
+        </ul>
+        <div class="s-brand">leonardodavid.com.br</div>
+        <div class="s-at">@leonardodavidvisagista</div>
+      </div>
+
+      <!-- SLIDE 4 — COM visagismo -->
+      <div class="slide c2-base c2-body" id="c2s4">
+        <div class="eyebrow">Com visagismo</div>
+        <h2>O que você<br><em>ganha.</em></h2>
+        <ul class="c2-list">
+          <li><span class="icon good">✓</span><span>Análise do seu formato de rosto</span></li>
+          <li><span class="icon good">✓</span><span>Corte que realça seus melhores traços</span></li>
+          <li><span class="icon good">✓</span><span>Estilo que reflete quem você realmente é</span></li>
+          <li><span class="icon good">✓</span><span>Confiança de sair diferente — de verdade</span></li>
+        </ul>
+        <div class="s-brand">leonardodavid.com.br</div>
+        <div class="s-at">@leonardodavidvisagista</div>
+      </div>
+
+      <!-- SLIDE 5 — QUOTE -->
+      <div class="slide c2-quote" id="c2s5">
+        <div class="s-line-h" style="top:80px;left:0;right:0;"></div>
+        <div class="s-line-h" style="bottom:80px;left:0;right:0;"></div>
+        <blockquote>
+          Não é apenas um corte.<br>É a sua identidade<br>em cada detalhe.
+        </blockquote>
+        <div class="q-line"></div>
+        <div class="q-author">Leonardo David · Visagista</div>
+      </div>
+
+      <!-- SLIDE 6 — CTA -->
+      <div class="slide c2-base" id="c2s6" style="align-items:center;justify-content:center;text-align:center;padding:52px;">
+        <div class="s-tag" style="margin-bottom:24px;">Pronto para a transformação?</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;line-height:1.2;color:var(--text);position:relative;margin-bottom:16px;">
+          Descubra o corte<br>feito para <em style="color:var(--gold);font-style:italic;">você.</em>
+        </div>
+        <div style="width:40px;height:1px;background:var(--gold);margin:20px auto;position:relative;"></div>
+        <div style="font-size:13px;color:var(--gold);letter-spacing:0.08em;position:relative;margin-bottom:8px;">leonardodavid.com.br</div>
+        <div style="font-size:11px;color:var(--text-dim);position:relative;">Caxias – MA · Link na bio</div>
+      </div>
+
+    </div>
+    <div class="slide-nav">
+      <button class="nav-btn" id="prev-1" onclick="changeSlide(1,-1)" disabled>‹</button>
+      <div class="dots" id="dots-1">
+        <div class="dot active" onclick="goSlide(1,0)"></div>
+        <div class="dot" onclick="goSlide(1,1)"></div>
+        <div class="dot" onclick="goSlide(1,2)"></div>
+        <div class="dot" onclick="goSlide(1,3)"></div>
+        <div class="dot" onclick="goSlide(1,4)"></div>
+        <div class="dot" onclick="goSlide(1,5)"></div>
+      </div>
+      <button class="nav-btn" id="next-1" onclick="changeSlide(1,1)">›</button>
+    </div>
+    <button class="download-btn" onclick="downloadSlide(1)">⬇ Baixar Slide em Alta Resolução (1080×1080)</button>
+    <button class="download-all-btn" onclick="downloadAll(1)">⬇ Baixar Todos os Slides</button>
+  </div>
+
+  <div class="side-info">
+    <div class="info-card">
+      <div class="info-label">Legenda — Carrossel 2</div>
+      <div class="info-text" id="caption-1">O visagismo não é luxo — é o que separa um bom corte de um corte que foi feito pra VOCÊ. 🔥
+
+Muita gente chega aqui sem saber exatamente o que quer. E tudo bem.
+É por isso que cada atendimento começa com uma análise completa: rosto, estilo, personalidade.
+
+O resultado? Um corte que faz sentido pra quem você é.
+
+Salva esse post pra mandar pro seu amigo que ainda acha que qualquer corte serve. 😄
+
+👉 Link na bio pra agendar
+📍 Caxias – MA
+
+#visagismo #oqueevisagismo #cortecabelo #cabelomasculino #barbeiro #visagistamasculino #cortemasculino #dicasdecabelo #estilomasculino #leonardodavidvisagista #caxiasma</div>
+      <button class="copy-btn" onclick="copyCaption(1)">Copiar legenda</button>
+    </div>
+    <div class="info-card">
+      <div class="info-label">Dicas de uso</div>
+      <div class="info-text" style="font-size:12px;">• Carrossel educativo tem alto compartilhamento
+• Peça para salvar: "Salva pra não esquecer"
+• Ideal para postar às terças ou quartas (menor concorrência)
+• Ótimo para atrair quem nunca foi a um visagista</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ CARROSSEL 3 — PROMOÇÃO ═══════════════ -->
+<div class="workspace" id="ws-2">
+  <div class="preview-area">
+    <div class="slide-counter" id="counter-2">Slide 1 de 7</div>
+    <div class="slide-wrapper" id="slidebox-2">
+
+      <!-- SLIDE 1 — CAPA -->
+      <div class="slide c3-base active" id="c3s1" style="position:relative;">
+        <div class="bg-sweep"></div>
+        <div class="big-price">R$220</div>
+        <div class="label">Serviço mais procurado</div>
+        <h1>O serviço que<br>mais <em style="color:var(--gold);font-style:italic;">transforma</em><br>em 1 hora.</h1>
+        <div class="hook" style="margin-top:16px;font-size:13px;color:var(--text-dim);position:relative;">Corte com Visagismo — R$ 220</div>
+        <div class="s-brand">leonardodavid.com.br</div>
+        <div class="s-at">@leonardodavidvisagista</div>
+      </div>
+
+      <!-- SLIDE 2 — O que é -->
+      <div class="slide c3-base c3-features" id="c3s2">
+        <div class="feat-label">Corte com Visagismo</div>
+        <h2>O que está<br>incluído</h2>
+        <ul class="feat-list">
+          <li><div class="feat-dot"></div><span>Consultoria completa de imagem</span></li>
+          <li><div class="feat-dot"></div><span>Análise facial personalizada</span></li>
+          <li><div class="feat-dot"></div><span>Corte sob medida para o seu rosto</span></li>
+        </ul>
+        <div class="s-brand">leonardodavid.com.br</div>
+        <div class="s-at">@leonardodavidvisagista</div>
+      </div>
+
+      <!-- SLIDE 3 — Como funciona -->
+      <div class="slide c3-base c3-steps" id="c3s3">
+        <div class="step-label">Como funciona</div>
+        <h2>3 etapas.<br>1 transformação.</h2>
+        <div class="step-items">
+          <div class="step-item">
+            <div class="step-n">1</div>
+            <div class="step-content">
+              <div class="step-title">Análise do seu rosto</div>
+              <div class="step-desc">Formato, traços, estilo e personalidade.</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-n">2</div>
+            <div class="step-content">
+              <div class="step-title">Consultoria de estilo</div>
+              <div class="step-desc">Recomendação personalizada do corte ideal.</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-n">3</div>
+            <div class="step-content">
+              <div class="step-title">Execução com precisão</div>
+              <div class="step-desc">Corte técnico e artístico, feito exclusivamente para você.</div>
+            </div>
+          </div>
+        </div>
+        <div class="s-brand">leonardodavid.com.br</div>
+        <div class="s-at">@leonardodavidvisagista</div>
+      </div>
+
+      <!-- SLIDE 4 — Resultado -->
+      <div class="slide c3-result" id="c3s4">
+        <div class="bg-sweep"></div>
+        <div class="result-label">O resultado</div>
+        <blockquote>
+          Você não vai apenas<br>sair diferente.<br>Vai sair como uma<br><em>versão melhor</em><br>de você mesmo.
+        </blockquote>
+        <div style="width:40px;height:1px;background:var(--gold);position:relative;"></div>
+      </div>
+
+      <!-- SLIDE 5 — Preço -->
+      <div class="slide c3-price-slide" id="c3s5">
+        <div class="pr-label">Investimento</div>
+        <div class="pr-name">Corte com Visagismo</div>
+        <div class="pr-value">R$ 220</div>
+        <div class="pr-dur">Atendimento de 1 hora · Individual e exclusivo</div>
+        <div style="width:40px;height:1px;background:rgba(201,169,110,0.3);position:relative;margin-bottom:20px;"></div>
+        <div class="pr-avail">Disponível de Segunda a Sábado<br>Vagas limitadas por semana</div>
+        <div class="s-brand">leonardodavid.com.br</div>
+        <div class="s-at">@leonardodavidvisagista</div>
+      </div>
+
+      <!-- SLIDE 6 — Depoimento fictício / social proof -->
+      <div class="slide c3-result" id="c3s6" style="padding:56px 52px;">
+        <div class="bg-sweep"></div>
+        <div class="result-label">Por que é o mais procurado</div>
+        <blockquote style="font-size:26px;margin-bottom:24px;">
+          Arte e técnica a<br>serviço da sua<br><em>identidade.</em>
+        </blockquote>
+        <div style="font-size:12px;color:var(--text-dim);position:relative;line-height:1.7;max-width:300px;text-align:center;">
+          Leonardo David é visagista especializado em transformação masculina — cada detalhe pensado para você.
+        </div>
+      </div>
+
+      <!-- SLIDE 7 — CTA FINAL -->
+      <div class="slide c3-cta" id="c3s7">
+        <div class="bg-lines"></div>
+        <div class="urgency">Vagas limitadas por semana</div>
+        <h2>Garanta a<br>sua <em>agora.</em></h2>
+        <div class="cta-sub">Atendimento exclusivo em Caxias – MA</div>
+        <div class="cta-box">
+          <div class="cta-site">leonardodavid.com.br</div>
+          <div class="cta-detail">Link na bio · Agendamento online</div>
+        </div>
+        <div class="horario">Seg – Sex: 9h às 19h &nbsp;·&nbsp; Sáb: 9h às 17h</div>
+      </div>
+
+    </div>
+    <div class="slide-nav">
+      <button class="nav-btn" id="prev-2" onclick="changeSlide(2,-1)" disabled>‹</button>
+      <div class="dots" id="dots-2">
+        <div class="dot active" onclick="goSlide(2,0)"></div>
+        <div class="dot" onclick="goSlide(2,1)"></div>
+        <div class="dot" onclick="goSlide(2,2)"></div>
+        <div class="dot" onclick="goSlide(2,3)"></div>
+        <div class="dot" onclick="goSlide(2,4)"></div>
+        <div class="dot" onclick="goSlide(2,5)"></div>
+        <div class="dot" onclick="goSlide(2,6)"></div>
+      </div>
+      <button class="nav-btn" id="next-2" onclick="changeSlide(2,1)">›</button>
+    </div>
+    <button class="download-btn" onclick="downloadSlide(2)">⬇ Baixar Slide em Alta Resolução (1080×1080)</button>
+    <button class="download-all-btn" onclick="downloadAll(2)">⬇ Baixar Todos os Slides</button>
+  </div>
+
+  <div class="side-info">
+    <div class="info-card">
+      <div class="info-label">Legenda — Carrossel 3</div>
+      <div class="info-text" id="caption-2">1 hora. R$ 220. Uma transformação completa. 💈
+
+O Corte com Visagismo é nosso serviço mais procurado — e não é coincidência.
+
+É o único que combina análise do rosto + consultoria de imagem + corte sob medida.
+Não é um corte qualquer. É o corte que foi pensado pra você, do início ao fim.
+
+✅ Análise facial
+✅ Consultoria de estilo
+✅ Corte exclusivo
+
+As vagas da semana são limitadas. Agenda pelo link na bio antes de encher. 👇
+
+📍 Caxias – MA | Seg–Sex 9h às 19h | Sáb 9h às 17h
+
+#cortecabelo #cortecomvisagismo #visagistamasculino #transformacao #barbearia #caxiasma #estilomasculino #cabelo #cabelomasculino #leonardodavidvisagista #visagismo #maranhao</div>
+      <button class="copy-btn" onclick="copyCaption(2)">Copiar legenda</button>
+    </div>
+    <div class="info-card">
+      <div class="info-label">Dicas de uso</div>
+      <div class="info-text" style="font-size:12px;">• Este carrossel tem objetivo de venda — poste sexta ou sábado
+• Use Stories com link no dia que postar
+• Adicione o preço no primeiro story para filtrar o público
+• "Vagas limitadas" cria urgência real — use só se for verdade</div>
+    </div>
+  </div>
+</div>
+
+<!-- STATUS MSG -->
+<div class="status-msg" id="status-msg">Copiado!</div>
+
+<script>
+  // ── STATE ──
+  const state = [
+    { current: 0, total: 6 },
+    { current: 0, total: 6 },
+    { current: 0, total: 7 },
+  ];
+
+  // ── TAB SWITCHING ──
+  function switchTab(i) {
+    document.querySelectorAll('.tab').forEach((t,j) => t.classList.toggle('active', j===i));
+    document.querySelectorAll('.workspace').forEach((w,j) => w.classList.toggle('active', j===i));
+  }
+
+  // ── SLIDE NAVIGATION ──
+  function getSlides(wsIdx) {
+    return document.querySelectorAll(`#slidebox-${wsIdx} .slide`);
+  }
+
+  function goSlide(ws, idx) {
+    const slides = getSlides(ws);
+    const dots = document.querySelectorAll(`#dots-${ws} .dot`);
+    slides.forEach((s,i) => s.classList.toggle('active', i===idx));
+    dots.forEach((d,i) => d.classList.toggle('active', i===idx));
+    state[ws].current = idx;
+    document.getElementById(`counter-${ws}`).textContent = `Slide ${idx+1} de ${state[ws].total}`;
+    document.getElementById(`prev-${ws}`).disabled = idx === 0;
+    document.getElementById(`next-${ws}`).disabled = idx === state[ws].total - 1;
+  }
+
+  function changeSlide(ws, dir) {
+    const next = state[ws].current + dir;
+    if (next >= 0 && next < state[ws].total) goSlide(ws, next);
+  }
+
+  // ── DOWNLOAD SINGLE ──
+  async function downloadSlide(ws) {
+    const btn = document.querySelector(`#ws-${ws} .download-btn`);
+    const activeSlide = document.querySelector(`#slidebox-${ws} .slide.active`);
+    const idx = state[ws].current;
+
+    btn.textContent = '⏳ Gerando imagem...';
+    btn.classList.add('loading');
+
+    try {
+      const canvas = await html2canvas(activeSlide, {
+        scale: 2,          // 540px × 2 = 1080px
+        useCORS: true,
+        backgroundColor: null,
+        width: 540,
+        height: 540,
+        windowWidth: 540,
+        windowHeight: 540,
+        logging: false,
+      });
+
+      const link = document.createElement('a');
+      const names = ['servicos', 'visagismo', 'promocao'];
+      link.download = `leonardo-david-${names[ws]}-slide${idx+1}.png`;
+      link.href = canvas.toDataURL('image/png', 1.0);
+      link.click();
+
+      showStatus(`Slide ${idx+1} baixado! (1080×1080)`);
+    } catch(e) {
+      showStatus('Erro ao gerar. Tente novamente.');
+      console.error(e);
+    }
+
+    btn.innerHTML = '⬇ Baixar Slide em Alta Resolução (1080×1080)';
+    btn.classList.remove('loading');
+  }
+
+  // ── DOWNLOAD ALL ──
+  async function downloadAll(ws) {
+    const btn = document.querySelector(`#ws-${ws} .download-all-btn`);
+    const total = state[ws].total;
+    const names = ['servicos', 'visagismo', 'promocao'];
+    btn.textContent = `⏳ Gerando 0/${total}...`;
+    btn.disabled = true;
+
+    const originalIdx = state[ws].current;
+
+    for (let i = 0; i < total; i++) {
+      goSlide(ws, i);
+      await new Promise(r => setTimeout(r, 300)); // allow render
+
+      const activeSlide = document.querySelector(`#slidebox-${ws} .slide.active`);
+      btn.textContent = `⏳ Gerando ${i+1}/${total}...`;
+
+      try {
+        const canvas = await html2canvas(activeSlide, {
+          scale: 2,
+          useCORS: true,
+          backgroundColor: null,
+          width: 540,
+          height: 540,
+          logging: false,
+        });
+
+        await new Promise(r => setTimeout(r, 200));
+
+        const link = document.createElement('a');
+        link.download = `leonardo-david-${names[ws]}-slide${i+1}.png`;
+        link.href = canvas.toDataURL('image/png', 1.0);
+        link.click();
+
+        await new Promise(r => setTimeout(r, 600)); // stagger downloads
+      } catch(e) { console.error(e); }
+    }
+
+    goSlide(ws, originalIdx);
+    btn.textContent = '⬇ Baixar Todos os Slides';
+    btn.disabled = false;
+    showStatus(`${total} slides baixados!`);
+  }
+
+  // ── COPY CAPTION ──
+  function copyCaption(ws) {
+    const text = document.getElementById(`caption-${ws}`).textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.querySelectorAll('.copy-btn')[ws];
+      btn.textContent = '✓ Copiado!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = 'Copiar legenda';
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+
+  // ── STATUS ──
+  function showStatus(msg) {
+    const el = document.getElementById('status-msg');
+    el.textContent = msg;
+    el.classList.add('show');
+    setTimeout(() => el.classList.remove('show'), 3000);
+  }
+</script>
+</body>
+</html>
