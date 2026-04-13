@@ -1,2 +1,15 @@
+# Dependências
+node_modules/
+
+# IDEs
 .vscode/
-"node_modules/" 
+
+# Configuração com chaves reais (NUNCA commitar)
+firebase-config.js
+.env
+.env.local
+.env.*.local
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
