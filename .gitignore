@@ -4,8 +4,7 @@ node_modules/
 # IDEs
 .vscode/
 
-# Configuração com chaves reais (NUNCA commitar)
-firebase-config.js
+# Variáveis de ambiente (nunca commitar)
 .env
 .env.local
 .env.*.local
