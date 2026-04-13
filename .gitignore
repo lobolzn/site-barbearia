@@ -4,6 +4,9 @@ node_modules/
 # IDEs
 .vscode/
 
+# Firebase config com chave real (gerado pelo GitHub Actions em deploy)
+firebase-config.js
+
 # Variáveis de ambiente (nunca commitar)
 .env
 .env.local
